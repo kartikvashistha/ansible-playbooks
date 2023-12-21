@@ -1,12 +1,4 @@
 ---
-home_user_path: "/home/kartik"
-os: "fedora"
-
-zsh_framework_config: "ohmyzsh"
-
-gitconfig_name: "Kartik Vashistha"
-gitconfig_email: "kartikv.work@gmail.com"
-
 wsl: true
 
 nvidia: false
