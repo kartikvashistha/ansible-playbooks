@@ -3,3 +3,5 @@
 - src: https://github.com/kartikvashistha/setup-fedora.git
   scm: git
 
+- src: https://github.com/kartikvashistha/dotfiles.git
+  scm: git
