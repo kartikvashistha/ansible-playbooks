@@ -1,4 +1,14 @@
 ---
+home_user_path: "/home/kartik"
+os: "fedora"
+
+zsh_framework_config: "ohmyzsh"
+
+gitconfig_name: "Kartik Vashistha"
+gitconfig_email: "kartikv.work@gmail.com"
+
+wsl: true
+
 nvidia: false
 omz: true
 docker: false
@@ -8,6 +18,8 @@ enable_nerdfonts: false
 enable_flatpak: false
 
 packages:
+  - bc
+  - unzip
   - neofetch
   - fzf
   - golang
@@ -15,8 +27,6 @@ packages:
   - glances
   - vim-enhanced
   - samba
-  - gnome-tweaks
-  # - 1password-cli
   - neovim
   - python3-virtualenvwrapper
   - nodejs
@@ -29,8 +39,6 @@ grouplist:
   - '@core'
   - '@virtualization'
 
-# flatpak:
-
 third_party_repos:
   - name: google-cloud-sdk.repo
     description: Google Cloud CLI
@@ -40,10 +48,3 @@ third_party_repos:
     repo_gpgcheck: false
     gpgkey: https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 
-  # - name: docker-ce.repo
-  #   description: Docker CE Stable - $basearch
-  #   baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/stable
-  #   enabled: true
-  #   gpgcheck: true
-  #   repo_gpgcheck: false
-  #   gpgkey: https://download.docker.com/linux/fedora/gpg
