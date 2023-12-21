@@ -1,25 +1,10 @@
 - name: Run the setup-fedora role
   hosts: localhost
   become: true
-  remote_user: kartik
+
   vars_files:
-    - group_vars/fedora-workstation-vars.yml
-  # roles:
-  # - role: setup-fedora
-  tasks:
-    - name: Print all available facts
-      ansible.builtin.debug:
-        var: ansible_facts
-    - name: Install tree
-      ansible.builtin.dnf:
-        name: "tree"
-        state: latest
-   
-  # roles:
-  # - setup-fedora
-  # vars:
-  #   nvidia: false
-  #   omz: true
-  #   docker: true
-  #   version: 38
-  #
+    - group_vars/fedora-wsl-vars.yml
+
+  roles:
+    - role: setup-fedora
+    - role: dotfiles
