@@ -4,7 +4,7 @@
 
   vars_files:
     - group_vars/wsl-dotfiles-vars.yml
-    - group_vars/fedora-wsl-vars.yml
+    - group_vars/wsl-fedora-vars.yml
 
   roles:
     - role: setup-fedora
