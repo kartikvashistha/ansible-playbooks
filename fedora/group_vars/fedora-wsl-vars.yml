@@ -1,0 +1,50 @@
+---
+home_user_path: "/home/kartik"
+os: "fedora"
+
+zsh_framework_config: "ohmyzsh"
+
+gitconfig_name: "Kartik Vashistha"
+gitconfig_email: "kartikv.work@gmail.com"
+
+wsl: true
+
+nvidia: false
+omz: true
+docker: false
+version: 38
+
+enable_nerdfonts: false
+enable_flatpak: false
+
+packages:
+  - bc
+  - unzip
+  - neofetch
+  - fzf
+  - golang
+  - htop
+  - glances
+  - vim-enhanced
+  - samba
+  - neovim
+  - python3-virtualenvwrapper
+  - nodejs
+  - gcc
+  - gcc-c++
+  - make
+  - kubectl
+
+grouplist:
+  - '@core'
+  - '@virtualization'
+
+third_party_repos:
+  - name: google-cloud-sdk.repo
+    description: Google Cloud CLI
+    baseurl: https://packages.cloud.google.com/yum/repos/cloud-sdk-el8-x86_64
+    enabled: true
+    gpgcheck: true
+    repo_gpgcheck: false
+    gpgkey: https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+
