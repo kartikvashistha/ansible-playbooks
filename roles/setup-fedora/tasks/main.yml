@@ -46,6 +46,7 @@
   ansible.builtin.dnf:
     name: "{{ packages }}"
     state: present
+    disable_gpg_check: true
   become_user: root
   become: true
 
