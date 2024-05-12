@@ -18,6 +18,12 @@
     dest: "{{ home_user_path }}/.p10k.zsh"
     mode: "0644"
 
+- name: Clone zsh-autosuggestions  # noqa: latest
+  ansible.builtin.git:
+    repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
+    dest: "{{ home_user_path }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+    depth: 1
+
     # - name: Clone passion theme  # noqa: latest
 #   ansible.builtin.git:
 #     repo: 'https://github.com/ChesterYue/ohmyzsh-theme-passion.git'
