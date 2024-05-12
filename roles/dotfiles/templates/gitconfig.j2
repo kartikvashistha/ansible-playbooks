@@ -1,0 +1,8 @@
+[user]
+	email = "{{ gitconfig_email }}"
+	name = "{{ gitconfig_name }}"
+
+{% if wsl %}
+[core]
+	sshCommand = ssh.exe
+{% endif %}

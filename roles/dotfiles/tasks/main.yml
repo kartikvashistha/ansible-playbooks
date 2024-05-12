@@ -1,0 +1,54 @@
+---
+# tasks file for dotfiles
+
+# Run oh my zsh tasks
+- name: Run ohmyzsh tasks
+  ansible.builtin.include_tasks: oh-my-zsh.yml
+
+- name: Create .zshrc file
+  ansible.builtin.template:
+    src: templates/zshrc.j2
+    dest: "{{ home_user_path }}/.zshrc"
+    mode: "0644"
+
+- name: Create .omzrc file
+  ansible.builtin.template:
+    src: templates/omzrc.j2
+    dest: "{{ home_user_path }}/.omzrc"
+    mode: "0644"
+
+- name: Create .ssh directory
+  ansible.builtin.file:
+    state: directory
+    path: "{{ home_user_path }}/.ssh"
+    mode: '0755'
+
+- name: Create .ssh/config
+  ansible.builtin.template:
+    src: templates/ssh-config.j2
+    dest: "{{ home_user_path }}/.ssh/config"
+    mode: "0644"
+
+- name: Create gitconfig
+  ansible.builtin.template:
+    src: templates/gitconfig.j2
+    dest: "{{ home_user_path }}/.gitconfig"
+    mode: "0644"
+
+- name: Install neovim config files
+  ansible.builtin.copy:
+    src: files/nvim
+    dest: "{{ home_user_path }}/.config"
+    mode: "0644"
+
+- name: Create Wezterm XDG config dir
+  ansible.builtin.file:
+    state: directory
+    path: "{{ home_user_path }}/.config/wezterm"
+    mode: '0755'
+
+- name: Install Wezterm configuration
+  ansible.builtin.template:
+    src: templates/wezterm.j2
+    dest: "{{ home_user_path }}/.config/wezterm/wezterm.lua"
+    mode: "0644"

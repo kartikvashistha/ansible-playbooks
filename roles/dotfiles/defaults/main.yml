@@ -1,0 +1,10 @@
+---
+# defaults file for dotfiles
+home_user_path: "{{ ansible_facts['env']['HOME'] }}" # Home Path of the user where you want to install the dotfiles
+
+os: # Values can be macos, fedora
+
+gitconfig_name: # Git config name
+gitconfig_email: # Git config email
+
+wsl: false # Boolean value to configure if the setup is WSL

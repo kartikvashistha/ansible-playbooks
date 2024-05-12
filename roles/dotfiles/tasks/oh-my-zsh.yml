@@ -1,0 +1,30 @@
+---
+# Init and configure oh my zsh framework
+
+- name: Clone oh-my-zsh repo  # noqa: latest
+  ansible.builtin.git:
+    repo: 'https://github.com/ohmyzsh/ohmyzsh.git'
+    dest: "{{ home_user_path }}/.oh-my-zsh"
+
+- name: Clone powerlevel10k  # noqa: latest
+  ansible.builtin.git:
+    repo: 'https://github.com/romkatv/powerlevel10k.git'
+    dest: "{{ home_user_path }}/.oh-my-zsh/custom/themes/powerlevel10k"
+    depth: 1
+
+- name: Setup powerlevel10k config]
+  ansible.builtin.copy:
+    src: files/p10k.zsh
+    dest: "{{ home_user_path }}/.p10k.zsh"
+    mode: "0644"
+
+    # - name: Clone passion theme  # noqa: latest
+#   ansible.builtin.git:
+#     repo: 'https://github.com/ChesterYue/ohmyzsh-theme-passion.git'
+#     dest: "{{ home_user_path }}/code/ohmyzsh-theme-passion"
+
+# - name: Copy passion theme to Oh my Zsh themes folder
+#   ansible.builtin.copy:
+#     src: "{{ home_user_path }}/code/ohmyzsh-theme-passion/passion.zsh-theme"
+#     dest: "{{ home_user_path }}/.oh-my-zsh/themes/passion.zsh-theme"
+#     remote_src: true
