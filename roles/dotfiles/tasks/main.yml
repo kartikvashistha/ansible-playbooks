@@ -52,3 +52,15 @@
     src: templates/wezterm.j2
     dest: "{{ home_user_path }}/.config/wezterm/wezterm.lua"
     mode: "0644"
+
+- name: Clone tpm   # noqa: latest
+  ansible.builtin.git:
+    repo: 'https://github.com/tmux-plugins/tpm.git'
+    dest: "{{ home_user_path }}/.tmux/plugins/tpm"
+    depth: 1
+
+- name: Install tmux configuration
+  ansible.builtin.template:
+    src: templates/tmux.conf.j2
+    dest: "{{ home_user_path }}/.config/tmux/tmux.conf"
+    mode: "0644"
