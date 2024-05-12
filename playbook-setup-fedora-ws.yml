@@ -6,4 +6,4 @@
 
   roles:
     - role: setup-fedora
-    # - role: dotfiles
+    - role: dotfiles

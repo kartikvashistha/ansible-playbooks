@@ -1,4 +1,11 @@
 ---
+# dotfiles role vars
+os: fedora
+gitconfig_name: "Kartik Vashistha"
+gitconfig_email: "kartikv.work@gmail.com"
+wsl: false
+
+# setup-fedora role vars
 nvidia: true
 docker: true
 clone_nerdfonts: true
