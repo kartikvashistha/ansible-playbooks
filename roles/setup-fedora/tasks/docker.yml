@@ -26,10 +26,12 @@
   become: true
   become_user: root
 
-# Modify /etc/docker/daemon.json for Docker to be able to use NVIDIA Container Runtime: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-with-yum-or-dnf
+# Modify /etc/docker/daemon.json for Docker to be able to use NVIDIA Container Runtime:
+# https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-with-yum-or-dnf
 - name: Modify /etc/docker/daemon.json
   ansible.builtin.template:
     src: templates/daemon.json.j2
     dest: /etc/docker/daemon.json
+    mode: "0777"
   become: true
   become_user: root
