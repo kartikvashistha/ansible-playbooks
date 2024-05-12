@@ -1,0 +1,9 @@
+- name: Setup a Fedora Workstation machine
+  hosts: localhost
+
+  vars_files:
+    - group_vars/fedora-ws-vars.yml
+
+  roles:
+    - role: setup-fedora
+    # - role: dotfiles
