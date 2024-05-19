@@ -1,3 +1,4 @@
+# vim:ft=yaml.ansible
 - name: Setup a Fedora Workstation machine
   hosts: localhost
 

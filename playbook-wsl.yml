@@ -1,3 +1,4 @@
+# vim:ft=yaml.ansible
 - name: Run the setup-fedora role
   hosts: localhost
   become: true
