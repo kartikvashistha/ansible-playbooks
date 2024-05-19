@@ -1,12 +1,14 @@
 ---
+# dotfile role vars
+os: fedora
+gitconfig_name: "Kartik Vashistha"
+gitconfig_email: "kartikv.work@gmail.com"
 wsl: true
 
+# setup-fedora role vars
 nvidia: false
-omz: true
 docker: false
-version: 38
-
-enable_nerdfonts: false
+clone_nerdfonts: false
 enable_flatpak: false
 
 packages:
@@ -39,4 +41,3 @@ third_party_repos:
     gpgcheck: true
     repo_gpgcheck: false
     gpgkey: https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-

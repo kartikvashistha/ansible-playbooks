@@ -4,7 +4,6 @@
   become: true
 
   vars_files:
-    - group_vars/wsl-dotfiles-vars.yml
     - group_vars/wsl-fedora-vars.yml
 
   roles:
