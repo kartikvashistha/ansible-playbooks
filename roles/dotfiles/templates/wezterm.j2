@@ -17,8 +17,8 @@ config.color_scheme = "Material (base16)"
 
 -- Font
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 13
 
+config.font_size = {% if os=="fedora" %} 13 {% else %} 18 {% endif %}
 config.use_fancy_tab_bar = true
 
 config.window_frame = {
@@ -32,7 +32,7 @@ config.window_frame = {
 
   -- The size of the font in the tab bar.
   -- Default to 10.0 on Windows but 12.0 on other systems
-  font_size = 9.0,
+  font_size = {% if os=="fedora" %} 9.0 {% else %} 13.0 {% endif %},
 
   -- The overall background color of the tab bar when
   -- the window is focused
@@ -57,13 +57,6 @@ config.colors = {
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 -- config.integrated_title_button_style = "Gnome"
 
-config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
-}
-
 local gpus = wezterm.gui.enumerate_gpus()
 config.webgpu_preferred_adapter = gpus[0]
 config.front_end = "WebGpu"
@@ -71,5 +64,11 @@ config.enable_wayland = true
 config.prefer_egl = true
 {% endif %}
 
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
+}
 -- and finally, return the configuration to wezterm
 return config
