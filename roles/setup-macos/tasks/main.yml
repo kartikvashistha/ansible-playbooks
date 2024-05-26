@@ -1,0 +1,11 @@
+---
+# tasks file for setup-macos
+- name: Install brew pkgs
+  community.general.homebrew:
+    name: "{{ brew_pkgs }}"
+    state: present
+
+- name: Install brew casks
+  community.general.homebrew_cask:
+    name: "{{ brew_casks }}"
+    state: present

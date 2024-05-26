@@ -1,0 +1,10 @@
+# vim:ft=yaml.ansible
+- name: Setup a macOS machine
+  hosts: localhost
+
+  vars_files:
+    - group_vars/macos-vars.yml
+
+  roles:
+    - role: setup-macos
+    - role: dotfiles

@@ -1,0 +1,35 @@
+---
+# dotfile role vars
+os: macos
+gitconfig_name: "Kartik Vashistha"
+gitconfig_email: "kartikv.work@gmail.com"
+wsl: false
+
+# List of non gui pkgs to be installed via homebrew
+brew_pkgs:
+  - ansible 
+  - asdf
+  - fzf
+  - git
+  - helm
+  - htop
+  - kubectl
+  - minikube
+  - molecule
+  - nvim
+  - pyenv
+  - pyenv-virtualenv
+  - virtualenvwrapper
+
+# List of gui apps to be installed via homebrew casks
+brew_casks:
+  - 1password
+  - discord
+  - dropbox
+  - docker
+  - firefox
+  - google-chrome 
+  - iterm2
+  - scroll-reverser
+  - spotify
+  - visual-studio-code
