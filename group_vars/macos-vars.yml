@@ -7,29 +7,76 @@ wsl: false
 
 # List of non gui pkgs to be installed via homebrew
 brew_pkgs:
-  - ansible 
+  - ansible
   - asdf
+  - autoconf
+  - automake
+  - ca-certificates
+  - coreutils
+  - cryptography
+  - fastfetch
   - fzf
   - git
+  - gnupg
+  - gnutls
+  - go
   - helm
   - htop
-  - kubectl
+  - kubernetes-cli
+  - lazydocker
+  - lazygit
+  - luajit
   - minikube
   - molecule
-  - nvim
+  - ncurses
+  - neofetch
+  - neovim
+  - node
+  - openldap
   - pyenv
   - pyenv-virtualenv
+  - pyenv-virtualenvwrapper
+  - python-certifi
+  - python-cryptography
+  - python-distlib
+  - python-filelock
+  - python-platformdirs
+  - python-setuptools
+  - python@3.11
+  - python@3.12
+  - python@3.8
+  - ranger
+  - readline
+  - ripgrep
+  - sqlite
+  - starship
+  - tmux
+  - tree-sitter
+  - virtualenv
   - virtualenvwrapper
 
 # List of gui apps to be installed via homebrew casks
 brew_casks:
   - 1password
   - discord
-  - dropbox
   - docker
+  - dropbox
   - firefox
-  - google-chrome 
+  - font-fira-mono-nerd-font
+  - font-hack-nerd-font
+  - font-input
+  - font-jetbrains-mono-nerd-font
+  - google-chrome
+  - google-cloud-sdk
   - iterm2
+  - jellyfin
+  - jetbrains-toolbox
+  - kitty
+  - qbittorrent
+  - rectangle
   - scroll-reverser
+  - signal
   - spotify
   - visual-studio-code
+  - vlc
+  - wezterm
