@@ -195,6 +195,7 @@ return {
 				"stylua", -- Used to format lua code
 				"gofumpt",
 				"ruff",
+				"ansible-lint",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
