@@ -41,11 +41,14 @@
     dest: "{{ home_user_path }}/.config"
     mode: "0644"
 
-- name: Create Wezterm XDG config dir
+- name: Create XDG config dirs
   ansible.builtin.file:
     state: directory
-    path: "{{ home_user_path }}/.config/wezterm"
+    path: "{{ home_user_path }}/.config/{{ item }}"
     mode: '0755'
+  loop:
+    - wezterm
+    - tmux
 
 - name: Install Wezterm configuration
   ansible.builtin.template:
