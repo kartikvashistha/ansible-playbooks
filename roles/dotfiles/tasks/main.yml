@@ -49,6 +49,7 @@
   loop:
     - wezterm
     - tmux
+    - kitty
 
 - name: Install Wezterm configuration
   ansible.builtin.template:
@@ -66,4 +67,16 @@
   ansible.builtin.template:
     src: templates/tmux.conf.j2
     dest: "{{ home_user_path }}/.config/tmux/tmux.conf"
+    mode: "0644"
+
+- name: Install kitty theme
+  ansible.builtin.template:
+    src: templates/kitty/current-theme.conf.j2
+    dest: "{{ home_user_path }}/.config/kitty/current-theme.conf"
+    mode: "0644"
+
+- name: Install kitty configuration
+  ansible.builtin.template:
+    src: templates/kitty/kitty.conf.j2
+    dest: "{{ home_user_path }}/.config/kitty/kitty.conf"
     mode: "0644"
