@@ -74,3 +74,4 @@ brew_casks:
   - visual-studio-code
   - vlc
   - wezterm
+  - kitty

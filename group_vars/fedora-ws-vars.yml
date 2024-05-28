@@ -58,6 +58,7 @@ packages:
   - php
   - ruby
   - luarocks
+  - kitty
 
 grouplist:
   - '@core'
