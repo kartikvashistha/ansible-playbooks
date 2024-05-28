@@ -9,3 +9,13 @@
   community.general.homebrew_cask:
     name: "{{ brew_casks }}"
     state: present
+
+- name: Install commitizen node.js package globally
+  community.general.npm:
+    name: commitizen
+    global: true
+
+- name: Install conventional-changelog node.js package globally
+  community.general.npm:
+    name: commitizen
+    global: true
