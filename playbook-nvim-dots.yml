@@ -1,0 +1,6 @@
+# vim:ft=yaml.ansible
+- name: Install neovim config
+  hosts: localhost
+
+  roles:
+    - role: neovim

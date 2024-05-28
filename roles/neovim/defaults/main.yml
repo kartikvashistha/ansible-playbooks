@@ -1,0 +1,2 @@
+---
+neovim_home_user_path: "{{ ansible_facts['env']['HOME'] }}" # Home Path of the user where you want to install the dotfiles

@@ -1,0 +1,6 @@
+---
+- name: Install neovim config files
+  ansible.builtin.copy:
+    src: files/nvim
+    dest: "{{ neovim_home_user_path }}/.config"
+    mode: "0644"

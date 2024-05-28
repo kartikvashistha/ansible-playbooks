@@ -8,3 +8,4 @@
   roles:
     - role: setup-fedora
     - role: dotfiles
+    - role: neovim

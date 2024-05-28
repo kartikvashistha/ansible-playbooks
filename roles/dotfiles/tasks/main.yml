@@ -35,12 +35,6 @@
     dest: "{{ home_user_path }}/.gitconfig"
     mode: "0644"
 
-- name: Install neovim config files
-  ansible.builtin.copy:
-    src: files/nvim
-    dest: "{{ home_user_path }}/.config"
-    mode: "0644"
-
 - name: Create XDG config dirs
   ansible.builtin.file:
     state: directory
