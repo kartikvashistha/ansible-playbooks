@@ -2,6 +2,9 @@
 	email = "{{ gitconfig_email }}"
 	name = "{{ gitconfig_name }}"
 
+[push]
+	autoSetupRemote = true
+
 {% if wsl %}
 [core]
 	sshCommand = ssh.exe
