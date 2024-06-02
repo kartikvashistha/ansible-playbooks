@@ -4,7 +4,8 @@ include current-theme.conf
 # END_KITTY_THEME
 
 font_family   JetBrainsMono Nerd Font
-font_size     13
+font_size     {%- if os=="macosx" %} 17 {% else %} 13 {%- endif %}
+
 tab_bar_edge  top
 tab_bar_style powerline
 tab_bar_margin_height 0.0 0.0

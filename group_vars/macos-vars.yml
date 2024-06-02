@@ -1,6 +1,5 @@
 ---
 # dotfile role vars
-os: macos
 gitconfig_name: "Kartik Vashistha"
 gitconfig_email: "kartikv.work@gmail.com"
 wsl: false
