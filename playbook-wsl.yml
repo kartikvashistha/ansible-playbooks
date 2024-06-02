@@ -4,7 +4,7 @@
   become: true
 
   vars_files:
-    - group_vars/wsl-fedora-vars.yml
+    - group_vars/fedora-wsl-vars.yml
 
   roles:
     - role: setup-fedora
