@@ -2,5 +2,6 @@
 
 #/bin/bash
 set -e
-cp -r ~/.config/nvim/{init.lua,lua/} ~/code/ansible-playbooks/roles/neovim/files/nvim/
+rm -r ~/code/ansible-playbooks/roles/neovim/files/nvim/*
+cp -r ~/.config/nvim/{"init.lua",lua/} ~/code/ansible-playbooks/roles/neovim/files/nvim/
 
