@@ -1,7 +1,7 @@
 return {
 	{
 		"folke/tokyonight.nvim",
-		lazy = false,
+		lazy = true,
 		priority = 1000,
 	},
 
@@ -18,5 +18,6 @@ return {
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
+		lazy = true,
 	},
 }

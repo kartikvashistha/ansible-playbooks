@@ -1,4 +1,4 @@
--- Copied almost all of this from kickstart.nvim coz configuring nvim-cmp hurts my brain
+-- Copied almost all of this from kickstart.nvim coz configuring lsp stuff hurts my brain
 return {
 	{ -- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
