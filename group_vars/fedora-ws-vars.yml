@@ -24,7 +24,7 @@ packages:
   - code
   - 1password
   - 1password-cli
-  - google-chrome
+  - google-chrome-stable
   - flatpak
   - neovim
   - firefox
