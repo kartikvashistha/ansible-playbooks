@@ -91,4 +91,4 @@
     - { repo: "https://github.com/NvChad/starter", config_dest: "NvChad" }
     - { repo: "https://github.com/nvim-lua/kickstart.nvim", config_dest: "kickstart" }
     - { repo: "https://github.com/LazyVim/starter", config_dest: "LazyVim" }
-    - { repo: "https://github.com/AstroNvim/starter", config_dest: "AstroNvim" }
+    - { repo: "https://github.com/AstroNvim/template", config_dest: "AstroNvim" }
