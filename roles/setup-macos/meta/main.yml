@@ -7,9 +7,9 @@ galaxy_info:
   min_ansible_version: "2.1"
 
   platforms:
-  - name: macOS
-    versions:
-    - all
+    - name: macOS
+      versions:
+        - all
 
   galaxy_tags: []
     # List tags for your role here, one per line. A tag is a keyword that describes
