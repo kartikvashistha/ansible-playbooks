@@ -18,4 +18,7 @@ Example:
 ```
 # Run the Fedora Workstation setup playbook
 ansible-playbook -K playbook-setup-fedora-ws.yml
+
+# To discover all system data that is available to Ansible for use, run the print-ansible-facts.yml playbook
+ansible-playbook -K print-ansible-facts.yml
 ```
