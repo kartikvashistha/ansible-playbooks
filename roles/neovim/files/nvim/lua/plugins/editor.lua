@@ -16,24 +16,21 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = { "bash", "go", "lua", "markdown", "vim", "vimdoc" },
-				modules = {},
-				auto_install = true,
-				highlight = { enable = true },
-				indent = { enable = true },
-				sync_install = false,
-				ignore_install = { "" },
-			})
-		end,
+		opts = {
+			ensure_installed = { "bash", "go", "lua", "markdown", "vim", "vimdoc", "terraform" },
+			modules = {},
+			auto_install = true,
+			highlight = { enable = true },
+			indent = { enable = true },
+			sync_install = false,
+			ignore_install = { "" },
+		},
 	},
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
 		},
 
