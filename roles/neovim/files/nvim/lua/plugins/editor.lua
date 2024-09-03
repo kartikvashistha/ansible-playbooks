@@ -101,6 +101,11 @@ return {
 				"<cmd>Telescope live_grep <cr>",
 				desc = "Telescope live_grep",
 			},
+			{
+				"gd",
+				"<cmd> Telescop lsp_definitions <cr>",
+				desc = "[G]oto [D]efinitions",
+			},
 		},
 	},
 
