@@ -7,5 +7,5 @@ require("config.lazy")
 
 -- bootstrap additional configs
 require("config.config")
-
+require("config.keymaps")
 require("config.ansible")

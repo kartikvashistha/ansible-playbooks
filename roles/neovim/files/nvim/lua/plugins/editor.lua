@@ -26,6 +26,7 @@ return {
 			ignore_install = { "" },
 		},
 	},
+	-- Neotree, for an ide like file explorer
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
@@ -33,20 +34,7 @@ return {
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
 		},
-
 		cmd = "Neotree",
-		keys = {
-			{
-				"<leader>e",
-				function()
-					require("neo-tree.command").execute({
-						toggle = true,
-						reveal = true,
-					})
-				end,
-				desc = "Explorer NeoTree",
-			},
-		},
 	},
 
 	-- Telescope, an extensible fuzzy finder over lists
@@ -73,39 +61,6 @@ return {
 
 			-- Useful for getting pretty icons, but requires a Nerd Font.
 			{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
-		},
-		keys = {
-			{
-				"<leader>fb",
-				"<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
-				desc = "Show all open buffers",
-			},
-			{
-				"<leader>ff",
-				"<cmd>Telescope find_files <cr>",
-				desc = "Find Files (root dir)",
-			},
-			{
-				"<leader>fw",
-				"<cmd>Telescope grep_string <cr>",
-				desc = "Find word in cwd (root dir)",
-			},
-
-			{
-				"<leader>tl",
-				"<cmd>Telescope <cr>",
-				desc = "Launch Telescope",
-			},
-			{
-				"<leader>lg",
-				"<cmd>Telescope live_grep <cr>",
-				desc = "Telescope live_grep",
-			},
-			{
-				"gd",
-				"<cmd> Telescop lsp_definitions <cr>",
-				desc = "[G]oto [D]efinitions",
-			},
 		},
 	},
 

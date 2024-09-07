@@ -26,7 +26,6 @@ local language_server_configs = {
 	clangd = {},
 	gopls = {},
 	rust_analyzer = {},
-	ruff_lsp = {},
 	pyright = {},
 	terraformls = {},
 	ansiblels = {},
