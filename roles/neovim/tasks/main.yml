@@ -1,4 +1,4 @@
----
+# vim:ft=yaml.ansible
 - name: Install neovim config files
   ansible.builtin.copy:
     src: files/nvim
