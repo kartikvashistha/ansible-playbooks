@@ -1,4 +1,4 @@
-local M = require("config.mason")
+local M = require("configs.mason")
 local pkgs = M.mason_pkgs() -- List of pkgs (like language servers, linters and formatters) we want Mason to install
 local lspconfig = M.lsp_configs() -- Table of lsp configurations for various language servers that we want to pass to our desired language servers.
 

@@ -3,9 +3,9 @@ vim.g.mapleader = " "
 vim.cmd("set termguicolors")
 
 -- bootstrap lazy.nvim
-require("config.lazy")
+require("configs.lazy")
 
 -- bootstrap additional configs
-require("config.config")
-require("config.keymaps")
-require("config.ansible")
+require("configs.config")
+require("configs.keymaps")
+require("configs.ansible")
