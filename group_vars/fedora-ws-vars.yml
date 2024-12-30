@@ -64,6 +64,7 @@ grouplist:
   - '@sound-and-video'
   - '@virtualization'
   - '@multimedia'
+  - '@workstation-product-environment' # apparently needs to be installed after every new fedora release so that we can get the latest softwares
 
 flatpak:
   - com.spotify.Client
@@ -127,4 +128,3 @@ third_party_repos:
     gpgcheck: false
     repo_gpgcheck: true
     gpgkey: https://nvidia.github.io/libnvidia-container/gpgkey
-
