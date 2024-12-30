@@ -45,6 +45,7 @@
     - tmux
     - kitty
     - alacritty
+    - ghostty
 
 - name: Install Wezterm configuration
   ansible.builtin.template:
@@ -75,13 +76,19 @@
     src: templates/kitty/kitty.conf.j2
     dest: "{{ home_user_path }}/.config/kitty/kitty.conf"
     mode: "0644"
-    
+
 - name: Install alacritty configuration
   ansible.builtin.template:
     src: templates/alacritty.toml.j2
     dest: "{{ home_user_path }}/.config/alacritty/alacritty.toml"
     mode: "0644"
-  
+
+- name: Install Ghostty configuration
+  ansible.builtin.template:
+    src: templates/ghostty.j2
+    dest: "{{ home_user_path }}/.config/ghostty/config"
+    mode: "0644"
+
 - name: Install commitizen configuration
   ansible.builtin.template:
     src: templates/czrc.j2
