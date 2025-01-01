@@ -1,6 +1,6 @@
 # vim:ft=yaml.ansible
 - name: Update all system packages
-  hosts: all
+  hosts: "{{ host_group }}"
 
   tasks: # noqa: latest
     - name: Upgrade all packages on a Fedora system   # noqa: latest
