@@ -1,0 +1,12 @@
+# vim:ft=yaml.ansible
+- name: Update all system packages
+  hosts: all
+
+  tasks: # noqa: latest
+    - name: Upgrade all packages on a Fedora system   # noqa: latest
+      ansible.builtin.dnf:
+        name: "*" # noqa: latest
+        state: latest # noqa: latest
+      when: ansible_facts['distribution'] == "Fedora"
+      become: true
+      become_user: root
