@@ -1,0 +1,14 @@
+---
+local:
+  hosts:
+    localhost:
+      ansible_connection: local
+
+cluster:
+  hosts:
+    velen.home.arpa:
+      ansible_connection: ssh
+      ansible_user: kartik
+      ansible_port: 22
+      ansible_password: ""
+      ansible_become_password: ""
