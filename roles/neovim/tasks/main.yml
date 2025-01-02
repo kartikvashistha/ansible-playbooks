@@ -1,6 +1,15 @@
-# vim:ft=yaml.ansible
-- name: Install neovim config files
-  ansible.builtin.copy:
-    src: files/nvim
-    dest: "{{ neovim_home_user_path }}/.config"
-    mode: "0644"
+---
+# Doing rsync in two steps so that it doesn't replace the local lazy-lock.json (as I find it undesirable to commit it)
+- name: Sync neovim init.lua
+  ansible.posix.synchronize:
+    src: files/nvim/init.lua
+    dest: "{{ neovim_home_user_path }}/.config/nvim"
+    delete: true
+    recursive: true
+
+- name: Sync neovim lua directory
+  ansible.posix.synchronize:
+    src: files/nvim/lua
+    dest: "{{ neovim_home_user_path }}/.config/nvim"
+    delete: true
+    recursive: true
