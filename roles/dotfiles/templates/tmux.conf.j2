@@ -6,8 +6,8 @@ set-option -sa terminal-overrides ",xterm*:Tc"
 set -g mouse on
 
 unbind C-b
-# set -g prefix C-Space
-# bind C-Space send-prefix
+set -g prefix M-e
+bind M-e send-prefix
 
 # Vim style pane selection
 bind h select-pane -L
