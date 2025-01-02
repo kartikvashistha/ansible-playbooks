@@ -1,5 +1,5 @@
 -- Set colourscheme
-vim.cmd([[colorscheme sonokai]])
+vim.cmd([[colorscheme tokyonight-night]])
 
 -- Enable vim options
 vim.opt.relativenumber = true
