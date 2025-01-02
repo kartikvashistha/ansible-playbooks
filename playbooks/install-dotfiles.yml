@@ -1,9 +1,10 @@
 # vim:ft=yaml.ansible
 - name: Install dotfiles
-  hosts: localhost
+  hosts: "{{ host_group }}"
 
   vars_files:
     - group_vars/dotfiles.yml
 
   roles:
     - role: dotfiles
+    - role: neovim

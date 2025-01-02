@@ -1,6 +1,6 @@
 # vim:ft=yaml.ansible
 - name: Setup a Fedora Workstation machine
-  hosts: localhost
+  hosts: "{{ host_group }}"
 
   vars_files:
     - group_vars/fedora-ws-vars.yml

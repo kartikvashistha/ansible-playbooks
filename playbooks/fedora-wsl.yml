@@ -1,6 +1,6 @@
 # vim:ft=yaml.ansible
 - name: Run the setup-fedora role
-  hosts: localhost
+  hosts: "{{ host_group }}"
   become: true
 
   vars_files:
