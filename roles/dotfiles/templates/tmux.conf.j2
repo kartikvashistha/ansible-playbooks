@@ -2,7 +2,7 @@
 set-option -g default-terminal "screen-256color"
 # set -sa terminal-overrides ",$TERM:Tc"
 set-option -sa terminal-overrides ",xterm*:Tc"
-# set-option -a terminal-features 'alacritty:RGB'
+set-option -a terminal-features 'alacritty:RGB'
 set -g mouse on
 
 unbind C-b
@@ -11,7 +11,7 @@ bind M-e send-prefix
 
 # Vim style pane selection
 bind h select-pane -L
-bind j select-pane -D 
+bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
