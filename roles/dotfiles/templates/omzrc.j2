@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="{{ home_user_path }}/.oh-my-zsh"
+export ZSH="{{ dotfiles_home_user_path }}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -71,16 +71,16 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git 
+  git
   fzf
   docker docker-compose
   1password
   ansible
   asdf
-  {% if os == "macosx" -%}
+  {% if dotfiles_os == "macosx" -%}
   brew
   {% endif -%}
-  {% if os == "fedora" -%}
+  {% if dotfiles_os == "fedora" -%}
   dnf
   {% endif -%}
   golang

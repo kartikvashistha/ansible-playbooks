@@ -4,24 +4,24 @@
 - name: Clone oh-my-zsh repo  # noqa: latest
   ansible.builtin.git:
     repo: 'https://github.com/ohmyzsh/ohmyzsh.git'
-    dest: "{{ home_user_path }}/.oh-my-zsh"
+    dest: "{{ dotfiles_home_user_path }}/.oh-my-zsh"
 
 - name: Clone powerlevel10k  # noqa: latest
   ansible.builtin.git:
     repo: 'https://github.com/romkatv/powerlevel10k.git'
-    dest: "{{ home_user_path }}/.oh-my-zsh/custom/themes/powerlevel10k"
+    dest: "{{ dotfiles_home_user_path }}/.oh-my-zsh/custom/themes/powerlevel10k"
     depth: 1
 
 - name: Setup powerlevel10k config]
   ansible.builtin.copy:
     src: files/p10k.zsh
-    dest: "{{ home_user_path }}/.p10k.zsh"
+    dest: "{{ dotfiles_home_user_path }}/.p10k.zsh"
     mode: "0644"
 
 - name: Clone zsh-autosuggestions  # noqa: latest
   ansible.builtin.git:
     repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
-    dest: "{{ home_user_path }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+    dest: "{{ dotfiles_home_user_path }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
     depth: 1
 
     # - name: Clone passion theme  # noqa: latest

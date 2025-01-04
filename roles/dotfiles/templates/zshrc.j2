@@ -18,7 +18,7 @@ alias gac='git add . && cz'
 
 alias vim=nvim
 
-{% if wsl -%}
+{% if dotfiles_wsl -%}
 # WSL aliases
 alias ssh='ssh.exe'
 alias ssh-add='ssh-add.exe'
@@ -47,4 +47,3 @@ bindkey -s ^a "nvims\n"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-

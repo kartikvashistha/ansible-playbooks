@@ -1,11 +1,11 @@
 [user]
-	email = "{{ gitconfig_email }}"
-	name = "{{ gitconfig_name }}"
+	email = "{{ dotfiles_gitconfig_email }}"
+	name = "{{ dotfiles_gitconfig_name }}"
 
 [push]
 	autoSetupRemote = true
 
-{% if wsl %}
+{% if dotfiles_wsl %}
 [core]
 	sshCommand = ssh.exe
 {% endif %}

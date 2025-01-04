@@ -8,37 +8,37 @@
 - name: Create .zshrc file
   ansible.builtin.template:
     src: templates/zshrc.j2
-    dest: "{{ home_user_path }}/.zshrc"
+    dest: "{{ dotfiles_home_user_path }}/.zshrc"
     mode: "0644"
 
 - name: Create .omzrc file
   ansible.builtin.template:
     src: templates/omzrc.j2
-    dest: "{{ home_user_path }}/.omzrc"
+    dest: "{{ dotfiles_home_user_path }}/.omzrc"
     mode: "0644"
 
 - name: Create .ssh directory
   ansible.builtin.file:
     state: directory
-    path: "{{ home_user_path }}/.ssh"
+    path: "{{ dotfiles_home_user_path }}/.ssh"
     mode: '0755'
 
 - name: Create .ssh/config
   ansible.builtin.template:
     src: templates/ssh-config.j2
-    dest: "{{ home_user_path }}/.ssh/config"
+    dest: "{{ dotfiles_home_user_path }}/.ssh/config"
     mode: "0644"
 
 - name: Create gitconfig
   ansible.builtin.template:
     src: templates/gitconfig.j2
-    dest: "{{ home_user_path }}/.gitconfig"
+    dest: "{{ dotfiles_home_user_path }}/.gitconfig"
     mode: "0644"
 
 - name: Create XDG config dirs
   ansible.builtin.file:
     state: directory
-    path: "{{ home_user_path }}/.config/{{ item }}"
+    path: "{{ dotfiles_home_user_path }}/.config/{{ item }}"
     mode: '0755'
   loop:
     - wezterm
@@ -50,55 +50,55 @@
 - name: Install Wezterm configuration
   ansible.builtin.template:
     src: templates/wezterm.j2
-    dest: "{{ home_user_path }}/.config/wezterm/wezterm.lua"
+    dest: "{{ dotfiles_home_user_path }}/.config/wezterm/wezterm.lua"
     mode: "0644"
 
 - name: Clone tpm   # noqa: latest
   ansible.builtin.git:
     repo: 'https://github.com/tmux-plugins/tpm.git'
-    dest: "{{ home_user_path }}/.tmux/plugins/tpm"
+    dest: "{{ dotfiles_home_user_path }}/.tmux/plugins/tpm"
     depth: 1
 
 - name: Install tmux configuration
   ansible.builtin.template:
     src: templates/tmux.conf.j2
-    dest: "{{ home_user_path }}/.config/tmux/tmux.conf"
+    dest: "{{ dotfiles_home_user_path }}/.config/tmux/tmux.conf"
     mode: "0644"
 
 - name: Install kitty theme
   ansible.builtin.template:
     src: templates/kitty/current-theme.conf.j2
-    dest: "{{ home_user_path }}/.config/kitty/current-theme.conf"
+    dest: "{{ dotfiles_home_user_path }}/.config/kitty/current-theme.conf"
     mode: "0644"
 
 - name: Install kitty configuration
   ansible.builtin.template:
     src: templates/kitty/kitty.conf.j2
-    dest: "{{ home_user_path }}/.config/kitty/kitty.conf"
+    dest: "{{ dotfiles_home_user_path }}/.config/kitty/kitty.conf"
     mode: "0644"
 
 - name: Install alacritty configuration
   ansible.builtin.template:
     src: templates/alacritty.toml.j2
-    dest: "{{ home_user_path }}/.config/alacritty/alacritty.toml"
+    dest: "{{ dotfiles_home_user_path }}/.config/alacritty/alacritty.toml"
     mode: "0644"
 
 - name: Install Ghostty configuration
   ansible.builtin.template:
     src: templates/ghostty.j2
-    dest: "{{ home_user_path }}/.config/ghostty/config"
+    dest: "{{ dotfiles_home_user_path }}/.config/ghostty/config"
     mode: "0644"
 
 - name: Install commitizen configuration
   ansible.builtin.template:
     src: templates/czrc.j2
-    dest: "{{ home_user_path }}/.czrc"
+    dest: "{{ dotfiles_home_user_path }}/.czrc"
     mode: "0644"
 
 - name: Install multiple nvim distros   # noqa: latest
   ansible.builtin.git:
     repo: "{{ item.repo }}"
-    dest: "{{ home_user_path }}/.config/{{ item.config_dest }}"
+    dest: "{{ dotfiles_home_user_path }}/.config/{{ item.config_dest }}"
     depth: 1
     force: true
   with_items:
