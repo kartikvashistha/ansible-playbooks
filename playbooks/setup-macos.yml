@@ -1,6 +1,7 @@
+---
 # vim:ft=yaml.ansible
 - name: Setup a macOS machine
-  hosts: "{{ host_group }}"
+  hosts: "{{ host_group | default('local') }}"
 
   vars_files:
     - group_vars/macos-vars.yml
