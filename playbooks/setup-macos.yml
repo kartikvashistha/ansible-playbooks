@@ -3,9 +3,6 @@
 - name: Setup a macOS machine
   hosts: "{{ host_group | default('local') }}"
 
-  vars_files:
-    - group_vars/macos-vars.yml
-
   roles:
     - role: setup-macos
     - role: dotfiles

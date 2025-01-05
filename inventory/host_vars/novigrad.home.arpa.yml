@@ -20,7 +20,7 @@ packages:
   - pavucontrol
   - vim-enhanced
   - samba
-  # - gnome-tweaks
+  - gnome-tweaks
   - code
   - 1password
   - 1password-cli
@@ -32,7 +32,7 @@ packages:
   - iwlegacy-firmware
   - iwlwifi-dvm-firmware
   - iwlwifi-mvm-firmware
-  # - gnome-extensions-app
+  - gnome-extensions-app
   - python3-ansible-lint
   - python3-virtualenvwrapper
   - nordvpn
@@ -64,7 +64,7 @@ grouplist:
   - '@sound-and-video'
   - '@virtualization'
   - '@multimedia'
-  - '@workstation-product-environment' # apparently needs to be installed after every new fedora release so that we can get the latest softwares
+  - '@workstation-product-environment' # this apparently needs to be (re-)installed after every new fedora release so that we can get the latest software after upgrading to a new release
 
 flatpak:
   - com.spotify.Client

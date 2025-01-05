@@ -3,9 +3,6 @@
 - name: Setup a Fedora Workstation machine
   hosts: "{{ host_group | default('local') }}"
 
-  vars_files:
-    - group_vars/fedora-ws-vars.yml
-
   roles:
     - role: setup-fedora
     - role: dotfiles

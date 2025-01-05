@@ -3,9 +3,6 @@
 - name: Install dotfiles
   hosts: "{{ host_group | default('local') }}"
 
-  vars_files:
-    - group_vars/dotfiles.yml
-
   roles:
     - role: dotfiles
     - role: neovim
