@@ -4,11 +4,12 @@ font-size = 14
 
 window-save-state = always
 window-padding-balance = true
-window-decoration = true
 
+{% if dotfiles_os == "fedora" -%}
 gtk-wide-tabs = true
-gtk-adwaita = false
-gtk-titlebar = true
+gtk-adwaita = true
+gtk-titlebar = false
+{% endif -%}
 
 # Navigate window splits
 keybind = ctrl+shift+h=goto_split:left
