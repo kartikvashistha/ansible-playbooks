@@ -35,6 +35,14 @@
   become: true
   become_user: root
 
+- name: Install Copr repos
+  community.general.copr:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  with_items: "{{ copr_repos }}"
+  become_user: root
+  become: true
+
 - name: Install groups
   ansible.builtin.dnf:
     name: "{{ grouplist }}"
@@ -53,6 +61,7 @@
 - name: Install nvidia packages from rpmfusion
   ansible.builtin.include_tasks: nvidia.yml
   when: nvidia
+
 
 - name: Add the flathub flatpak repository remote to the user installation
   community.general.flatpak_remote:

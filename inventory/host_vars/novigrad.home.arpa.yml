@@ -44,7 +44,7 @@ packages:
   - bc
   - unzip
   - thunderbird
-  - https://github.com/wez/wezterm/releases/download/20240203-110809-5046fc22/wezterm-20240203_110809_5046fc22-1.fedora39.x86_64.rpm
+  - wezterm
   - https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
   - tmux
   - fd-find
@@ -60,11 +60,11 @@ packages:
   - kitty
 
 grouplist:
-  - '@core'
-  - '@sound-and-video'
-  - '@virtualization'
-  - '@multimedia'
-  - '@workstation-product-environment' # this apparently needs to be (re-)installed after every new fedora release so that we can get the latest software after upgrading to a new release
+  - "@core"
+  - "@sound-and-video"
+  - "@virtualization"
+  - "@multimedia"
+  - "@workstation-product-environment" # this apparently needs to be (re-)installed after every new fedora release so that we can get the latest software after upgrading to a new release
 
 flatpak:
   - com.spotify.Client

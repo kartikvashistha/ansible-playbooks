@@ -61,3 +61,7 @@ third_party_repos:
     gpgcheck: true
     repo_gpgcheck: true
     gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+
+copr_repos: # List of Copr repos to enable
+  - name: "wezfurlong/wezterm-nightly"
+    state: "enabled"
