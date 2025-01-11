@@ -40,12 +40,7 @@
     state: directory
     path: "{{ dotfiles_home_user_path }}/.config/{{ item }}"
     mode: '0755'
-  loop:
-    - wezterm
-    - tmux
-    - kitty
-    - alacritty
-    - ghostty
+  loop: "{{ dotfiles_xdg_config_dirs }}"
 
 - name: Install Wezterm configuration
   ansible.builtin.template:

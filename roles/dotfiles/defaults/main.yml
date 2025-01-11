@@ -8,3 +8,10 @@ dotfiles_gitconfig_name: # Git config name
 dotfiles_gitconfig_email: # Git config email
 
 dotfiles_wsl: false # Boolean value to configure if the setup is WSL
+
+dotfiles_xdg_config_dirs: # List of XDG config dirs to create
+  - wezterm
+  - tmux
+  - kitty
+  - alacritty
+  - ghostty
