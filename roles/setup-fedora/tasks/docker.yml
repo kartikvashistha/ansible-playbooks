@@ -9,7 +9,7 @@
   become_user: root
 
 # Add $USER to docker group per docker postinstall instructions: https://docs.docker.com/engine/install/linux-postinstall/
-- name: Add the $USER to docker group
+- name: $USER to docker group {{ home_username }}
   ansible.builtin.user:
     name: "{{ home_username }}"
     groups: docker
