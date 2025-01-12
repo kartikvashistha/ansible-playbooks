@@ -58,6 +58,7 @@ packages:
   - ruby
   - luarocks
   - kitty
+  - ghostty-nightly
 
 grouplist:
   - "@core"
@@ -128,3 +129,13 @@ third_party_repos:
     gpgcheck: false
     repo_gpgcheck: true
     gpgkey: https://nvidia.github.io/libnvidia-container/gpgkey
+
+  - name: terra
+    description: Terra $releasever
+    baseurl: https://repos.fyralabs.com/terra$releasever
+    enabled: true
+    gpgcheck: true
+    repo_gpgcheck: true
+    gpgkey: https://repos.fyralabs.com/terra$releasever/key.asc
+    skip_if_unavailable: True
+    metadata_expire: 4h
