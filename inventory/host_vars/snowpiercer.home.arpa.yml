@@ -11,9 +11,11 @@ brew_pkgs:
   - autoconf
   - automake
   - ca-certificates
+  - composer
   - coreutils
   - cryptography
   - fastfetch
+  - fd
   - fzf
   - git
   - ghostty
@@ -22,10 +24,12 @@ brew_pkgs:
   - go
   - helm
   - htop
+  - julia
   - kubernetes-cli
   - lazydocker
   - lazygit
   - luajit
+  - luarocks
   - minikube
   - molecule
   - ncurses
@@ -33,6 +37,7 @@ brew_pkgs:
   - neovim
   - node
   - openldap
+  - php
   - pyenv
   - pyenv-virtualenv
   - pyenv-virtualenvwrapper
@@ -48,6 +53,7 @@ brew_pkgs:
   - tree-sitter
   - virtualenv
   - virtualenvwrapper
+  - wget
 
 # List of gui apps to be installed via homebrew casks
 brew_casks:
