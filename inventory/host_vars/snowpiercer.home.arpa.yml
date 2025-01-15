@@ -16,6 +16,7 @@ brew_pkgs:
   - fastfetch
   - fzf
   - git
+  - ghostty
   - gnupg
   - gnutls
   - go
