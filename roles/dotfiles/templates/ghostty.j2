@@ -1,19 +1,23 @@
 theme = Hacktober
 
-font-size = 14
-
-window-save-state = always
-window-padding-balance = true
-
 {% if dotfiles_os == "fedora" -%}
+font-size = 15
 gtk-wide-tabs = true
 gtk-adwaita = true
 gtk-titlebar = false
+{% endif -%}
+
+{% if dotfiles_os == "macosx" -%}
+font-size = 18
+window-padding-x = 0
+window-padding-y = 0
+{% endif -%}
+
+window-save-state = always
+window-padding-balance = true
 
 # Navigate window splits
 keybind = ctrl+shift+h=goto_split:left
 keybind = ctrl+shift+j=goto_split:bottom
 keybind = ctrl+shift+k=goto_split:top
 keybind = ctrl+shift+l=goto_split:right
-{% endif -%}
-
