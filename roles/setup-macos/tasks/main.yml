@@ -1,5 +1,9 @@
 ---
 # tasks file for setup-macos
+- name: Update homebrew
+  community.general.homebrew:
+    update_homebrew: true
+
 - name: Install brew pkgs
   community.general.homebrew:
     name: "{{ brew_pkgs }}"
