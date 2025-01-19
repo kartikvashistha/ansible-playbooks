@@ -1,4 +1,5 @@
 Host *
+  SetEnv TERM=xterm-256color
   {% if dotfiles_os == "fedora" %}
   IdentityAgent ~/.1password/agent.sock
   {% endif -%}
