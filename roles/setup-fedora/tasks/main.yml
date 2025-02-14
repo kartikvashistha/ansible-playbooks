@@ -104,7 +104,7 @@
     name: commitizen
     global: true
 
-- name: Install conventional-changelog node.js package globally
+- name: Install cz-conventional-changelog node.js package globally
   community.general.npm:
-    name: commitizen
+    name: cz-conventional-changelog
     global: true
