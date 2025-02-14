@@ -3,11 +3,11 @@
 - name: Update all system packages
   hosts: "{{ host_group | default('local') }}"
 
-  tasks: # noqa: latest
-    - name: Upgrade all packages on a Fedora system   # noqa: latest
+  tasks:
+    - name: Upgrade all packages on a Fedora system
       ansible.builtin.dnf:
-        name: "*" # noqa: latest
-        state: latest # noqa: latest
+        name: "*"
+        state: latest # noqa package-latest
       when: ansible_facts['distribution'] == "Fedora"
       become: true
       become_user: root
