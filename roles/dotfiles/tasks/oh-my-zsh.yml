@@ -12,7 +12,7 @@
     dest: "{{ dotfiles_home_user_path }}/.oh-my-zsh/custom/themes/powerlevel10k"
     depth: 1
 
-- name: Setup powerlevel10k config]
+- name: Setup powerlevel10k config
   ansible.builtin.copy:
     src: files/p10k.zsh
     dest: "{{ dotfiles_home_user_path }}/.p10k.zsh"
