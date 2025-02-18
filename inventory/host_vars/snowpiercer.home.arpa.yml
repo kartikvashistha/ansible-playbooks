@@ -25,6 +25,7 @@ brew_pkgs:
   - helm
   - htop
   - julia
+  - k9s
   - kubernetes-cli
   - lazydocker
   - lazygit
