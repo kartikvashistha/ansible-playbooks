@@ -15,3 +15,5 @@ dotfiles_xdg_config_dirs: # List of XDG config dirs to create
   - kitty
   - alacritty
   - ghostty
+  - nvim
+  - zed

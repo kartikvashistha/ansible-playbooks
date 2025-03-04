@@ -84,6 +84,15 @@
     dest: "{{ dotfiles_home_user_path }}/.config/ghostty/config"
     mode: "0644"
 
+- name: Install Zed configuration
+  ansible.builtin.template:
+    src: "{{ item.src }}"
+    dest: "{{ dotfiles_home_user_path }}/.config/{{ item.dest }}"
+    mode: "0644"
+  with_items:
+    - { src: '../templates/zed/settings.json.j2', dest: 'settings.json' }
+    - { src: '../templates/zed/keymap.json.j2', dest: 'keymap.json' }
+
 - name: Install commitizen configuration
   ansible.builtin.template:
     src: templates/czrc.j2
