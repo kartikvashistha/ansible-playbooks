@@ -7,31 +7,40 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "theme": "One Dark",
   "features": {
     "edit_prediction_provider": "none"
   },
-  "pane_split_direction_vertical": "right",
-  "pane_split_direction_horizontal": "down",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "diagnostics": {
+    "include_warnings": true,
+    "inline": {
+      "enabled": true,
+      "update_debounce_ms": 150,
+      "padding": 4,
+      "min_column": 0,
+      "max_severity": null
+    }
+  },
+  "vim_mode": true,
+  "soft_wrap": "editor_width",
+  "buffer_font_family": "Iosevka Nerd Font",
   "tab_bar": {
     "show": false
   },
-  "vim_mode": true,
+  "ui_font_family": ".SystemUIFont",
+  "terminal": { "font_family": "IosevkaTerm Nerd Font", "font_size": 16 },
+  "ui_font_size": 17,
+  "buffer_font_size": 17,
   "relative_line_numbers": true,
-  "theme": "One Dark",
-  "ui_font_size": 16.5,
-  "buffer_font_size": 16.0,
-  "buffer_font_family": "JetBrainsMonoNL Nerd Font",
-  "terminal": {
-    "font_size": 16,
-    "font_family": "JetBrainsMono Nerd Font"
-  },
-  "soft_wrap": "editor_width",
-  "languages": {
-    "Go": {
-      "source.organizeImports": true
-    }
+  "tabs": {
+    "file_icons": true
   },
   "file_types": {
+    "INI": ["*ansible.cfg"],
     "Ansible": [
       "**.ansible.yml",
       "**/defaults/**.yml",
@@ -39,33 +48,52 @@
       "**/meta/**.yml",
       "**/meta/**.yaml",
       "**/tasks/**.yml",
-      "**/tasks/*.yml",
-      "**/tasks/*.yaml",
-      "**/handlers/*.yml",
-      "**/handlers/*.yaml",
+      "**/tasks/**.yaml",
+      "**/handlers/**.yml",
+      "**/handlers/**.yaml",
       "**/group_vars/**.yml",
       "**/group_vars/**.yaml",
-      "**playbook*.yaml",
-      "**playbook*.yml"
+      "**/playbooks/**.yml",
+      "**/playbooks/**.yaml"
     ]
   },
   "lsp": {
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "hover": "true",
+          "completion": "true",
+          "schemas": {
+            "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/inventory.json": [
+              "hosts.yml",
+              "/inventory/*.yml",
+              "*/inventory/hosts.yml",
+              "**/inventory/*hosts.yml",
+              "**hosts.yml"
+            ]
+          }
+        }
+      }
+    },
     "ansible-language-server": {
       "settings": {
         "ansible": {
-          "path": "ansible"
-        },
-        "executionEnvironment": {
-          "enabled": false
-        },
-        "python": {
-          "interpreterPath": "python3"
-        },
-        "validation": {
-          "enabled": true,
-          "lint": {
-            "enabled": true,
-            "path": "ansible-lint"
+          "validation": {
+            "enabled": "true",
+            "lint": {
+              "enabled": "true",
+              "path": "ansible-lint",
+              "arguments": "-c .config/ansible-lint.yml"
+            }
+          },
+          "python": {
+            "interpreterPath": "python"
+          },
+          "ansible": {
+            "path": "ansible"
+          },
+          "executionEnvironment": {
+            "enabled": "false"
           }
         }
       }

@@ -87,7 +87,7 @@
 - name: Install Zed configuration
   ansible.builtin.template:
     src: "{{ item.src }}"
-    dest: "{{ dotfiles_home_user_path }}/.config/{{ item.dest }}"
+    dest: "{{ dotfiles_home_user_path }}/.config/zed/{{ item.dest }}"
     mode: "0644"
   with_items:
     - { src: '../templates/zed/settings.json.j2', dest: 'settings.json' }
