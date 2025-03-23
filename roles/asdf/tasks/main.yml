@@ -1,0 +1,51 @@
+---
+# tasks file for asdf
+- name: Install asdf via Homebrew
+  community.general.homebrew:
+    name:
+      - asdf
+    state: present
+  when: asdf_install_via_homebrew
+
+- name: Install asdf binary from releases
+  ansible.builtin.include_tasks: asdf_install.yml
+  when:
+    - asdf_install_via_gh_releases
+    - not asdf_install_via_homebrew
+
+# - name: Clone & install asdf
+#   ansible.builtin.git:
+#     repo: "{{ asdf_repo }}"
+#     dest: "{{ asdf_dir }}/.asdf"
+#     version: "{{ asdf_release_tag }}"
+
+- name: Create .asdf directory
+  ansible.builtin.file:
+    state: directory
+    path: "{{ asdf_dir }}"
+    mode: '0755'
+
+- name: Clone tool plugin repos  # noqa: latest
+  ansible.builtin.git:
+    repo: "{{ item.repo }}"
+    dest: "{{ asdf_dir }}/plugins/{{ item.name }}"
+  with_items: "{{ asdf_plugins }}"
+
+- name: Set default tool versions
+  ansible.builtin.lineinfile:
+    path: "{{ asdf_tool_file_path }}/.tool-versions"
+    regexp: '^{{ item.name }} {{ item.default_version }}'
+    line: '{{ item.name }} {{ item.default_version }}'
+    state: present
+    create: true
+    mode: '0644'
+  with_items: "{{ asdf_plugins }}"
+
+- name: Append asdf binary to $PATH
+  ansible.builtin.lineinfile:
+    path: "{{ asdf_file_to_append_path_in }}"
+    regexp: "^export PATH={{ asdf_binary_path }}:$PATH"
+    line: 'export PATH={{ asdf_binary_path }}:$PATH'
+    create: true
+    state: present
+    mode: '0644'

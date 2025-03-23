@@ -1,0 +1,24 @@
+---
+- name: Create asdf release dir
+  ansible.builtin.file:
+    state: directory
+    path: "{{ asdf_releases_dir }}/{{ asdf_release_tag }}"
+    mode: '0755'
+
+- name: Download asdf release archive
+  ansible.builtin.get_url:
+    url: "{{ asdf_release_url }}"
+    dest: "{{ asdf_releases_dir }}/{{  asdf_release_tag }}"
+    checksum: "{{ asdf_checksum_algorithm }}:{{ asdf_release_checksum_url }}"
+    mode: "0644"
+
+- name: Extract asdf binary from archive
+  ansible.builtin.unarchive:
+    src: "{{ asdf_releases_dir }}/{{ asdf_release_tag }}/{{ asdf_archive_file }}"
+    dest: "{{ asdf_releases_dir }}/{{ asdf_release_tag }}"
+
+- name: Copy asdf binary to - "{{ asdf_binary_path }}"
+  ansible.builtin.copy:
+    src: "{{ asdf_releases_dir }}/{{ asdf_release_tag }}/{{ asdf_binary_name }}"
+    dest: "{{ asdf_binary_path }}"
+    mode: "0755"
