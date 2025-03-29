@@ -69,6 +69,7 @@ brew_casks:
   - font-jetbrains-mono-nerd-font
   - google-chrome
   - google-cloud-sdk
+  - font-iosevka-nerd-font
   - iterm2
   - jellyfin
   - jetbrains-toolbox
