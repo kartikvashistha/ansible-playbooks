@@ -13,12 +13,6 @@
     - asdf_install_via_gh_releases
     - not asdf_install_via_homebrew
 
-# - name: Clone & install asdf
-#   ansible.builtin.git:
-#     repo: "{{ asdf_repo }}"
-#     dest: "{{ asdf_dir }}/.asdf"
-#     version: "{{ asdf_release_tag }}"
-
 - name: Create .asdf directory
   ansible.builtin.file:
     state: directory

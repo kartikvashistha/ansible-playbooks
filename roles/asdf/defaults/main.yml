@@ -7,7 +7,9 @@ asdf_tool_file_path: "{{ ansible_facts['env']['HOME'] }}"
 
 asdf_repo: "https://github.com/asdf-vm/asdf.git"
 asdf_release_tag: "v0.16.6"
-asdf_archive_file: "asdf-{{ asdf_release_tag }}-linux-amd64.tar.gz"
+asdf_release_platform: "linux"
+asdf_release_arch: "amd64"
+asdf_archive_file: "asdf-{{ asdf_release_tag }}-{{ asdf_release_platform }}-{{ asdf_release_arch }}.tar.gz"
 asdf_release_url: "https://github.com/asdf-vm/asdf/releases/download/{{ asdf_release_tag }}/{{ asdf_archive_file }}"
 
 asdf_checksum_algorithm: "md5"
