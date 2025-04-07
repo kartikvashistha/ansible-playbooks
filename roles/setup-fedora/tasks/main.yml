@@ -93,7 +93,7 @@
   ansible.builtin.include_tasks: docker.yml
   when: docker
 
-- name: Install commitizen node.js package globally
+- name: Install commitizen-cli node.js package globally
   community.general.npm:
     name: commitizen
     global: true
