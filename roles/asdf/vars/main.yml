@@ -1,2 +1,4 @@
 ---
 # vars file for asdf
+asdf_repo: "https://github.com/asdf-vm/asdf.git"
+asdf_releases_url: "https://github.com/asdf-vm/asdf/releases/download"
