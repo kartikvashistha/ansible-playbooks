@@ -58,7 +58,7 @@ packages:
   - ruby
   - luarocks
   - kitty
-  - ghostty-nightly
+  - ghostty
 
 grouplist:
   - "@core"
