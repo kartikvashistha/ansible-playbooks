@@ -93,12 +93,6 @@
   ansible.builtin.include_tasks: docker.yml
   when: docker
 
-- name: Clone & install asdf
-  ansible.builtin.git:
-    repo: https://github.com/asdf-vm/asdf.git
-    dest: "{{ home_user_path }}/.asdf"
-    version: v0.13.1
-
 - name: Install commitizen node.js package globally
   community.general.npm:
     name: commitizen
