@@ -47,6 +47,6 @@
     - asdf_install_via_gh_releases
     - not asdf_install_via_homebrew
 
-- name: Install tool versions from .tool-versions 
+- name: Install tool versions from .tool-versions
   ansible.builtin.command: |
     asdf install
