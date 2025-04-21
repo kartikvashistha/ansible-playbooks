@@ -13,3 +13,36 @@
     dest: "{{ neovim_home_user_path }}/.config/nvim"
     delete: true
     recursive: true
+
+- name: Install multiple nvim distros   # noqa: latest
+  ansible.builtin.git:
+    repo: "{{ item.repo }}"
+    dest: "{{ neovim_home_user_path }}/.config/{{ item.dist_name }}"
+    depth: 1
+    force: true
+  when: neovim_install_nvim_distros
+  with_items: "{{ neovim_nvim_distros_list }}"
+
+- name: Append code for easy switching between multiple neovim distributions
+  ansible.builtin.blockinfile:
+    path: "{{ neovim_shell_file_path }}"
+    state: present
+    block: |
+      # Config to allow easy switching between personal and various neovim distribution configs
+      {% for item in neovim_nvim_distros_list %}
+      alias {{ item.alias }}="NVIM_APPNAME={{ item.dist_name }} nvim"
+      {% endfor %}
+
+      function nvims() {
+        items=("default"{% for item in neovim_nvim_distros_list %} "{{ item.dist_name }}"{% endfor %})
+        config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+        if [[ -z $config ]]; then
+          echo "Nothing selected"
+          return 0
+        elif [[ $config == "default" ]]; then
+          config=""
+        fi
+        NVIM_APPNAME=$config nvim $@
+      }
+
+      bindkey -s ^a "nvims\n"

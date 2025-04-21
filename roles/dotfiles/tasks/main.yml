@@ -98,15 +98,3 @@
     src: templates/czrc.j2
     dest: "{{ dotfiles_home_user_path }}/.czrc"
     mode: "0644"
-
-- name: Install multiple nvim distros   # noqa: latest
-  ansible.builtin.git:
-    repo: "{{ item.repo }}"
-    dest: "{{ dotfiles_home_user_path }}/.config/{{ item.config_dest }}"
-    depth: 1
-    force: true
-  with_items:
-    - { repo: "https://github.com/NvChad/starter", config_dest: "NvChad" }
-    - { repo: "https://github.com/nvim-lua/kickstart.nvim", config_dest: "kickstart" }
-    - { repo: "https://github.com/LazyVim/starter", config_dest: "LazyVim" }
-    - { repo: "https://github.com/AstroNvim/template", config_dest: "AstroNvim" }

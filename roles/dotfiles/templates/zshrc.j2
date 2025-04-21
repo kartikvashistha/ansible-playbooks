@@ -24,14 +24,15 @@ alias ssh='ssh.exe'
 alias ssh-add='ssh-add.exe'
 {% endif -%}
 
+# BEGIN ANSIBLE MANAGED BLOCK
 # Config to allow easy switching between personal and various neovim distribution configs
-alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
-alias nvim-kick="NVIM_APPNAME=kickstart nvim"
-alias nvim-chad="NVIM_APPNAME=NvChad nvim"
 alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+alias nvim-kick="NVIM_APPNAME=kickstart nvim"
+alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
+alias nvim-chad="NVIM_APPNAME=NvChad nvim"
 
 function nvims() {
-  items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim")
+  items=("default" "AstroNvim" "kickstart" "LazyVim" "NvChad")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"
@@ -43,7 +44,7 @@ function nvims() {
 }
 
 bindkey -s ^a "nvims\n"
-
+# END ANSIBLE MANAGED BLOCK
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
