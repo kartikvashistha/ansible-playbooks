@@ -5,8 +5,6 @@ docker: false
 
 enable_flatpak: false
 
-clone_nerdfonts: false
-
 home_username: "{{ ansible_facts['env']['USERNAME'] }}"
 home_user_path: "{{ ansible_facts['env']['HOME'] }}"
 

@@ -81,13 +81,6 @@
   with_items: "{{ flatpak }}"
   when: enable_flatpak
 
-- name: Clone Nerd Fonts repo
-  ansible.builtin.git:  # noqa: latest
-    repo: https://github.com/ryanoasis/nerd-fonts.git
-    dest: "{{ home_user_path }}/code/nerd-fonts"
-    depth: 1
-  when: clone_nerdfonts
-
 # Install & configure Docker
 - name: Docker install and configuration
   ansible.builtin.include_tasks: docker.yml
