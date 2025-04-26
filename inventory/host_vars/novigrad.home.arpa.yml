@@ -62,6 +62,9 @@ packages:
   - luarocks
   - kitty
   - ghostty
+  - iosevka-nerd-fonts
+  - iosevkaterm-nerd-fonts
+  - iosevkatermslab-nerd-fonts
 
 grouplist:
   - "@core"
