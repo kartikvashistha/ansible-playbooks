@@ -71,8 +71,8 @@ grouplist:
   - "@sound-and-video"
   - "@virtualization"
   - "@multimedia"
-  - "@workstation-product-environment" # this apparently needs to be (re-)installed after every new fedora release so that we can get the latest software after upgrading to a new release
-
+  # this apparently needs to be (re-)installed after every new fedora release so that we can get the latest software after upgrading to a new release
+  - "@workstation-product-environment"
 flatpak:
   - com.spotify.Client
   - org.telegram.desktop
@@ -143,5 +143,5 @@ third_party_repos:
     gpgcheck: true
     repo_gpgcheck: true
     gpgkey: https://repos.fyralabs.com/terra$releasever/key.asc
-    skip_if_unavailable: True
+    skip_if_unavailable: true
     metadata_expire: 4h
