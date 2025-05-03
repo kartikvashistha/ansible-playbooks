@@ -89,3 +89,5 @@ macos_brew_casks:
   - vlc
   - wezterm
   - kitty
+  - jellyfin-media-player
+  - plex
