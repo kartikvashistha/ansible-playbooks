@@ -48,6 +48,7 @@
     - not asdf_install_via_homebrew
 
 - name: Install tool versions from .tool-versions
-  ansible.builtin.command: asdf install
+  ansible.builtin.command: |
+    "{{ asdf_binary_path }}/{{ asdf_binary_name }}" install
   register: output
   changed_when: output != 0
