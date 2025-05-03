@@ -6,12 +6,12 @@
 
 - name: Install brew pkgs
   community.general.homebrew:
-    name: "{{ brew_pkgs }}"
+    name: "{{ macos_brew_pkgs }}"
     state: present
 
 - name: Install brew casks
   community.general.homebrew_cask:
-    name: "{{ brew_casks }}"
+    name: "{{ macos_brew_casks }}"
     state: present
 
 - name: Install commitizen node.js package globally

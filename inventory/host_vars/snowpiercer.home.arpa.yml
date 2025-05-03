@@ -11,7 +11,7 @@ neovim_install_nvim_distros: true
 asdf_install_via_homebrew: true
 
 # List of non gui pkgs to be installed via homebrew
-brew_pkgs:
+macos_brew_pkgs:
   - ansible
   - asdf
   - autoconf
@@ -63,7 +63,7 @@ brew_pkgs:
   - wget
 
 # List of gui apps to be installed via homebrew casks
-brew_casks:
+macos_brew_casks:
   - 1password
   - discord
   - docker

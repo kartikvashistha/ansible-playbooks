@@ -1,4 +1,4 @@
-setup-macos
+macos
 =========
 
 A simple Ansible role to setup my macOS machine.
@@ -19,7 +19,7 @@ Role Variables
 
 - **brew_pkgs**: (Optional) List of packages that are installed via homebrew.
 
-- **brew_casks**: (Optional) List of GUI packages that are installed via homebrew. 
+- **brew_casks**: (Optional) List of GUI packages that are installed via homebrew.
 
 License
 -------

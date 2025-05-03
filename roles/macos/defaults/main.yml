@@ -1,0 +1,5 @@
+---
+# defaults file for setup-macos
+macos_brew_pkgs: # List of brew packages that you would like to install
+
+macos_brew_casks: # List of brew casks that you would like to install

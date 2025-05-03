@@ -1,0 +1,65 @@
+---
+# (Boolean) Setup nvidia drivers
+fedora_nvidia: false
+# (Boolean) Setup and enable docker
+fedora_docker: false
+
+# (Boolean) Enable flatpak
+fedora_enable_flatpak: false
+
+# (String) Name of the home user
+fedora_home_username: "{{ ansible_facts['env']['USER'] }}"
+
+# (String) Full path of the home user
+fedora_home_user_path: "{{ ansible_facts['env']['HOME'] }}"
+
+# (String) Version of Fedora on the system on which this role will run
+fedora_version: "{{ ansible_facts['distribution_version'] }}"
+
+# (List) of packages to install via dnf. Example:
+  # - fastfetch
+  # - fzf
+  # - htop
+fedora_packages: []
+
+fedora_nvidia_optional_packages:
+  - xorg-x11-drv-nvidia-cuda
+  - xorg-x11-drv-nvidia-cuda-libs
+  - xorg-x11-drv-nvidia-libs.i686
+
+fedora_docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin
+
+# (List) of groups to install. Example:
+# - '@core'
+# - '@sound-and-video'
+# - '@virtualization'
+# - '@multimedia'
+fedora_grouplist: []
+
+# (List) of flatpak packages to install. Example:
+# - com.spotify.Client
+# - org.telegram.desktop
+# - us.zoom.Zoom
+# - org.signal.Signal
+fedora_flatpak: []
+
+# (List) of third party repos to install. Supports: description, baseurl, enabled, gpgcheck, repo_gpgcheck and gpgkey.
+# Example:
+  # - name: google-chrome
+  #   description: google-chrome
+  #   baseurl: https://dl.google.com/linux/chrome/rpm/stable/x86_64
+  #   enabled: true
+  #   gpgcheck: true
+  #   repo_gpgcheck: true
+  #   gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+fedora_third_party_repos: []
+
+# (List) of Copr repos to enable
+  # - name: "wezfurlong/wezterm-nightly"
+  #   state: "enabled"
+fedora_copr_repos: []

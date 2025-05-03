@@ -2,16 +2,16 @@
 # Install and configure docker
 - name: Install a list of docker packages
   ansible.builtin.dnf:
-    name: "{{ docker_packages }}"
+    name: "{{ fedora_docker_packages }}"
     state: present
   notify: Start Docker Service
   become: true
   become_user: root
 
 # Add $USER to docker group per docker postinstall instructions: https://docs.docker.com/engine/install/linux-postinstall/
-- name: $USER to docker group {{ home_username }}
+- name: Add $USER to docker group {{ fedora_home_username }}
   ansible.builtin.user:
-    name: "{{ home_username }}"
+    name: "{{ fedora_home_username }}"
     groups: docker
     append: true
   become: true
@@ -22,7 +22,9 @@
   ansible.builtin.dnf:
     name: nvidia-container-toolkit
     state: present
-  when: nvidia
+  when:
+    - fedora_nvidia
+    - fedora_docker
   become: true
   become_user: root
 

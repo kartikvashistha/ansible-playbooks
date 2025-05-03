@@ -8,7 +8,7 @@
 
 - name: Install the optional 64 bit & 32 bit CUDA and NVENC packages
   ansible.builtin.dnf:
-    name: "{{ nvidia_optional_packages }}"
+    name: "{{ fedora_nvidia_optional_packages }}"
     state: present
   become: true
   become_user: root

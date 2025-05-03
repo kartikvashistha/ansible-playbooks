@@ -8,12 +8,11 @@ dotfiles_wsl: false
 neovim_install_nvim_distros: true
 
 # setup-fedora role vars
-nvidia: true
-docker: true
-clone_nerdfonts: true
-enable_flatpak: true
+fedora_nvidia: true
+fedora_docker: true
+fedora_enable_flatpak: true
 
-packages:
+fedora_packages:
   - fastfetch
   - fzf
   - golang
@@ -66,20 +65,20 @@ packages:
   - iosevkaterm-nerd-fonts
   - iosevkatermslab-nerd-fonts
 
-grouplist:
+fedora_grouplist:
   - "@core"
   - "@sound-and-video"
   - "@virtualization"
   - "@multimedia"
   # this apparently needs to be (re-)installed after every new fedora release so that we can get the latest software after upgrading to a new release
   - "@workstation-product-environment"
-flatpak:
+fedora_flatpak:
   - com.spotify.Client
   - org.telegram.desktop
   - us.zoom.Zoom
   - org.signal.Signal
 
-third_party_repos:
+fedora_third_party_repos:
   - name: 1password
     description: "1Password Stable Channel"
     baseurl: https://downloads.1password.com/linux/rpm/stable/$basearch
