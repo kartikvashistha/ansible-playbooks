@@ -1,7 +1,7 @@
 ---
 # vim:ft=yaml.ansible
 - name: Update all system packages
-  hosts: "{{ host_group | default('local') }}"
+  hosts: "{{ host_group | default('localhost') }}"
 
   tasks:
     - name: Upgrade all packages on a Fedora system
