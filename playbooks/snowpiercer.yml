@@ -1,9 +1,15 @@
-# Playbook to configure my personal macbook machine
 # vim:ft=yaml.ansible
-- name: Setup a macOS machine
+# Playbook to configure my personal macbook machine
+- name: Setup my macOS machine - Snowpiercer
   hosts: snowpiercer.home.arpa
   roles:
     - role: macos
     - role: asdf
     - role: dotfiles
     - role: neovim
+  tasks:
+    - name: Install tool versions from .tool-versions via asdf install
+      ansible.builtin.command: |
+        asdf install
+      register: output
+      changed_when: output != 0

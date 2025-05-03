@@ -20,7 +20,7 @@ asdf_binary_path: "{{ asdf_home_dir }}/.local/bin"
 asdf_file_to_append_path_in: "{{ asdf_home_dir }}/.zprofile"
 
 asdf_install_via_homebrew: false
-asdf_install_via_gh_releases: true
+asdf_install_via_gh_releases: false
 
 asdf_plugins:
   - name: "terraform"

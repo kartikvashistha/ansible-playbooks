@@ -1,5 +1,5 @@
-# Playbook to configure my Fedora Workstation machine
 # vim:ft=yaml.ansible
+# Playbook to configure my Fedora Workstation machine
 - name: Setup a Fedora Workstation machine
   hosts: novigrad.home.arpa
   roles:
@@ -7,3 +7,9 @@
     - role: asdf
     - role: dotfiles
     - role: neovim
+  tasks:
+    - name: Install tool versions from .tool-versions via asdf install
+      ansible.builtin.command: |
+        "{{ asdf_binary_path }}/{{ asdf_binary_name }}" install
+      register: output
+      changed_when: output != 0
