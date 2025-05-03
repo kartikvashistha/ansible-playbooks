@@ -1,10 +1,9 @@
----
+# Playbook to configure my Fedora Workstation machine
 # vim:ft=yaml.ansible
 - name: Setup a Fedora Workstation machine
-  hosts: "{{ host_group | default('local') }}"
-
+  hosts: novigrad.home.arpa
   roles:
-    - role: setup-fedora
+    - role: fedora
     - role: asdf
     - role: dotfiles
     - role: neovim

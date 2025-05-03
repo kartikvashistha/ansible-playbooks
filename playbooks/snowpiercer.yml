@@ -1,10 +1,9 @@
----
+# Playbook to configure my personal macbook machine
 # vim:ft=yaml.ansible
 - name: Setup a macOS machine
-  hosts: "{{ host_group | default('local') }}"
-
+  hosts: snowpiercer.home.arpa
   roles:
-    - role: setup-macos
+    - role: macos
     - role: asdf
     - role: dotfiles
     - role: neovim
