@@ -23,8 +23,8 @@ macos_brew_pkgs:
   - fastfetch
   - fd
   - fzf
-  - git
   - ghostty
+  - git
   - gnupg
   - gnutls
   - go
@@ -72,14 +72,17 @@ macos_brew_casks:
   - font-fira-mono-nerd-font
   - font-hack-nerd-font
   - font-input
+  - font-iosevka-nerd-font
   - font-jetbrains-mono-nerd-font
   - google-chrome
   - google-cloud-sdk
-  - font-iosevka-nerd-font
   - iterm2
   - jellyfin
+  - jellyfin-media-player
   - jetbrains-toolbox
   - kitty
+  - kitty
+  - plex
   - qbittorrent
   - rectangle
   - scroll-reverser
@@ -88,6 +91,3 @@ macos_brew_casks:
   - visual-studio-code
   - vlc
   - wezterm
-  - kitty
-  - jellyfin-media-player
-  - plex

@@ -16,57 +16,57 @@ fedora_docker: true
 fedora_enable_flatpak: true
 
 fedora_packages:
-  - fastfetch
-  - fzf
-  - golang
-  - htop
-  - glances
-  - steam
-  - pavucontrol
-  - vim-enhanced
-  - samba
-  - gnome-tweaks
-  - code
   - 1password
   - 1password-cli
-  - google-chrome-stable
-  - flatpak
-  - neovim
-  - firefox
   - NetworkManager-wifi
-  - iwlegacy-firmware
-  - iwlwifi-dvm-firmware
-  - iwlwifi-mvm-firmware
-  - gnome-extensions-app
-  - python3-ansible-lint
-  - python3-virtualenvwrapper
-  - nordvpn
-  - nodejs
+  - bc
+  - cargo
+  - code
+  - composer
+  - fastfetch
+  - fd-find
+  - firefox
+  - flatpak
+  - fzf
   - gcc
   - gcc-c++
-  - make
-  - kubectl
-  - bc
-  - unzip
-  - thunderbird
-  - wezterm
-  - https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
-  - tmux
-  - fd-find
-  - ripgrep
-  - python3-pip
-  - regexp
-  - cargo
-  - julia
-  - composer
-  - php
-  - ruby
-  - luarocks
-  - kitty
   - ghostty
+  - glances
+  - gnome-extensions-app
+  - gnome-tweaks
+  - golang
+  - google-chrome-stable
+  - htop
+  - https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
   - iosevka-nerd-fonts
   - iosevkaterm-nerd-fonts
   - iosevkatermslab-nerd-fonts
+  - iwlegacy-firmware
+  - iwlwifi-dvm-firmware
+  - iwlwifi-mvm-firmware
+  - julia
+  - kitty
+  - kubectl
+  - luarocks
+  - make
+  - neovim
+  - nodejs
+  - nordvpn
+  - pavucontrol
+  - php
+  - python3-ansible-lint
+  - python3-pip
+  - python3-virtualenvwrapper
+  - regexp
+  - ripgrep
+  - ruby
+  - samba
+  - steam
+  - thunderbird
+  - tmux
+  - unzip
+  - vim-enhanced
+  - wezterm
 
 fedora_grouplist:
   - "@core"
@@ -77,9 +77,9 @@ fedora_grouplist:
   - "@workstation-product-environment"
 fedora_flatpak:
   - com.spotify.Client
+  - org.signal.Signal
   - org.telegram.desktop
   - us.zoom.Zoom
-  - org.signal.Signal
 
 fedora_third_party_repos:
   - name: 1password
