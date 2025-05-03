@@ -17,6 +17,12 @@
     src: "{{ asdf_releases_dir }}/{{ asdf_release_tag }}/{{ asdf_archive_file }}"
     dest: "{{ asdf_releases_dir }}/{{ asdf_release_tag }}"
 
+- name: Ensure dir exists - "{{ asdf_binary_path }}"
+  ansible.builtin.file:
+    state: directory
+    path: "{{ asdf_binary_path }}"
+    mode: '0755'
+
 - name: Copy asdf binary to - "{{ asdf_binary_path }}"
   ansible.builtin.copy:
     src: "{{ asdf_releases_dir }}/{{ asdf_release_tag }}/{{ asdf_binary_name }}"
