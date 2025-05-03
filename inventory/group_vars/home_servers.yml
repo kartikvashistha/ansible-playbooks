@@ -1,0 +1,60 @@
+---
+# dotfiles role vars
+dotfiles_gitconfig_name: "Kartik Vashistha"
+dotfiles_gitconfig_email: "kartikv.work@gmail.com"
+dotfiles_wsl: false
+
+# neovim role vars
+neovim_install_nvim_distros: true
+
+# setup-fedora role vars
+nvidia: false
+docker: true
+enable_flatpak: false
+
+packages:
+  - fastfetch
+  - fzf
+  - htop
+  - glances
+  - vim-enhanced
+  - samba
+  - 1password
+  - 1password-cli
+  - neovim
+  - python3-ansible-lint
+  - python3-virtualenvwrapper
+  - nodejs
+  - gcc
+  - gcc-c++
+  - make
+  - kubectl
+  - bc
+  - unzip
+  - tmux
+  - fd-find
+  - ripgrep
+  - python3-pip
+  - regexp
+  - cargo
+  - julia
+  - composer
+  - php
+  - ruby
+  - luarocks
+  - golang
+
+grouplist:
+  - "@core"
+  - "@virtualization"
+  - "@multimedia"
+flatpak:
+
+third_party_repos:
+  - name: docker-ce.repo
+    description: Docker CE Stable - $basearch
+    baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/stable
+    enabled: true
+    gpgcheck: true
+    repo_gpgcheck: false
+    gpgkey: https://download.docker.com/linux/fedora/gpg
