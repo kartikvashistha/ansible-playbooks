@@ -25,6 +25,7 @@ fedora_packages:
   - composer
   - fastfetch
   - fd-find
+  - ffmpeg
   - firefox
   - flatpak
   - fzf
