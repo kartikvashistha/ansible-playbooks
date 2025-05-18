@@ -49,12 +49,24 @@ return {
 			},
 
 			-- (Default) Only show the documentation popup when manually triggered
-			completion = { documentation = { auto_show = false } },
+			completion = { documentation = { auto_show = true, auto_show_delay_ms = 300 } },
 
 			-- Default list of enabled providers defined so that you can extend it
 			-- elsewhere in your config, without redefining it, due to `opts_extend`
 			sources = {
-				default = { "lsp", "path", "snippets", "buffer" },
+				-- default = { "lsp", "path", "snippets", "buffer" },
+				default = { "lsp", "path", "snippets" },
+			},
+			-- Use a preset for snippets, check the snippets documentation for more information
+			-- snippets = { preset = "default" | "luasnip" | "mini_snippets" },
+			menu = {
+				-- nvim-cmp style menu
+				draw = {
+					columns = {
+						{ "label", "label_description", gap = 1 },
+						{ "kind_icon", "kind" },
+					},
+				},
 			},
 
 			-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
