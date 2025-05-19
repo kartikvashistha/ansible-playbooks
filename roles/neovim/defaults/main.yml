@@ -1,5 +1,7 @@
 ---
-neovim_home_user_path: "{{ ansible_facts['env']['HOME'] }}" # Home Path of the user where you want to install the dotfiles
+neovim_home_user_path: "{{ ansible_facts['env']['HOME'] }}" # Home path of the user for which neovim will be installed
+
+neovim_install_location: "{{ neovim_home_user_path }}/.config/nvim" # Location where nvim config will be installed
 
 neovim_install_nvim_distros: false # Boolean flag to install multiple neovim distros
 

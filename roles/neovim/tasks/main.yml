@@ -1,16 +1,8 @@
 ---
-# Doing rsync in two steps so that it doesn't replace the local lazy-lock.json (as I find it undesirable to commit it)
-- name: Sync neovim init.lua
+- name: Install my neovim config
   ansible.posix.synchronize:
-    src: files/nvim/init.lua
-    dest: "{{ neovim_home_user_path }}/.config/nvim"
-    delete: true
-    recursive: true
-
-- name: Sync neovim lua directory
-  ansible.posix.synchronize:
-    src: files/nvim/lua
-    dest: "{{ neovim_home_user_path }}/.config/nvim"
+    src: files/nvim/
+    dest: "{{ neovim_install_location }}"
     delete: true
     recursive: true
 
