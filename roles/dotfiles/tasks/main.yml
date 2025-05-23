@@ -11,6 +11,12 @@
     dest: "{{ dotfiles_home_user_path }}/.zshrc"
     mode: "0644"
 
+- name: Create .zshenv file
+  ansible.builtin.template:
+    src: templates/zshenv.j2
+    dest: "{{ dotfiles_home_user_path }}/.zshenv"
+    mode: "0644"
+
 - name: Create .omzrc file
   ansible.builtin.template:
     src: templates/omzrc.j2

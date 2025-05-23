@@ -20,7 +20,6 @@ fedora_packages:
   - 1password-cli
   - NetworkManager-wifi
   - bc
-  - cargo
   - code
   - composer
   - fastfetch
@@ -61,6 +60,7 @@ fedora_packages:
   - regexp
   - ripgrep
   - ruby
+  - rustup
   - samba
   - steam
   - thunderbird
