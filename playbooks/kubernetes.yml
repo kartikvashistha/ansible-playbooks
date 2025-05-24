@@ -1,24 +1,7 @@
----
 # vim:ft=yaml.ansible
-
-# - name: Display system facts that are available to Ansible
-#   hosts: home_servers
-#   tasks:
-#     - name: Print all available facts
-#       ansible.builtin.debug:
-#         var: ansible_facts
-#     - name: Print env
-#       ansible.builtin.debug:
-#         var: ansible_facts['env']
-#     - name: Print distribution
-#       ansible.builtin.debug:
-#         var: ansible_facts['distribution']
-#     - name: Print distribution version
-#       ansible.builtin.debug:
-#         var: ansible_facts['distribution_version']
-
 - name: Setup the kubernetes hosts
   hosts: home_servers
+  vars_files: ../inventory/vault.yml
   roles:
     - role: fedora
     - role: dotfiles
