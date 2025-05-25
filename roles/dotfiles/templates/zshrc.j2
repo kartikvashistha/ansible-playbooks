@@ -12,8 +12,6 @@ source virtualenvwrapper.sh
 
 # Aliases
 alias k='kubectl'
-alias kx='kubectx'
-alias kns='kubens'
 alias gac='git add . && cz'
 
 alias vim=nvim
@@ -43,6 +41,30 @@ function nvims() {
   NVIM_APPNAME=$config nvim $@
 }
 # END ANSIBLE MANAGED BLOCK
+
+function kx() {
+  contexts=$(kubectl config get-contexts -o=name | fzf --prompt="Select kube context: " --layout=reverse --height=~50% --border)
+  returncode=($?)
+
+  if [ $returncode -ne 0 ]; then
+    echo "Context selection cancelled."
+    return 1
+  fi
+
+  kubectl config use-context $contexts
+}
+
+function kns() {
+  namespace=$(kubectl get namespace --no-headers -o custom-columns=":metadata.name" | fzf --prompt="Select kube namespace: " --height=~50% --layout=reverse --border --exit-0)
+  returncode=($?)
+
+  if [ $returncode -ne 0 ]; then
+    echo "Namespace selection cancelled."
+    return 1
+  fi
+
+  kubectl config set-context --current --namespace=$namespace
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
