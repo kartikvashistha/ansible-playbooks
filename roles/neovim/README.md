@@ -29,4 +29,4 @@ NVIM_APPNAME=kartiks-nvim-config nvim
 |neovim_install_location| string |`{{ neovim_home_user_path }}/.config/nvim`| Lcoation where the nvim config will be installed |
 |neovim_install_nvim_distros| boolean | false | Boolean flag to install multiple neovim distros. Should be set to `true` for the below options to work |
 |neovim_shell_file_path| string |`{{ neovim_home_user_path }}/.zshrc`| Full path of the shell rc file where the nvim switch function will reside. Currently tested to work on zshrc only |
-|neovim_nvim_distros_list| list(string) | `[Astro, Lazy, NvChad, kickstart]` | List of neovim distros you want to install and access via $NVIM_APPNAME. Refer to the variable declaration to see how the structure should actually look like |
+|neovim_nvim_distros_list| list(map(string)) | `[Astro, Lazy, NvChad, kickstart]` | List of neovim distros you want to install and access via $NVIM_APPNAME. Refer to the variable declaration to see how the structure should actually look like |
