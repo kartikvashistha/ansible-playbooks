@@ -4,3 +4,4 @@ _pycache_/
 .DS_Store
 .vscode
 lazy-lock.json
+.ansible
