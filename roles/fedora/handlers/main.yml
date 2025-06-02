@@ -5,3 +5,7 @@
     name: docker
     state: started
     enabled: true
+
+- name: Reboot system
+  ansible.builtin.reboot:
+  become: true

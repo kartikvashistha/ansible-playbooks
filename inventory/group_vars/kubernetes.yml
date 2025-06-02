@@ -8,19 +8,19 @@ dotfiles_wsl: false
 neovim_install_nvim_distros: true
 
 # setup-fedora role vars
-nvidia: false
-docker: true
-enable_flatpak: false
+fedora_nvidia: false
+fedora_docker: true
+fedora_enable_flatpak: false
 
-packages:
+fedora_packages:
   - fastfetch
   - fzf
   - htop
   - glances
   - vim-enhanced
   - samba
-  - 1password
-  - 1password-cli
+  # - 1password
+  # - 1password-cli
   - neovim
   - python3-ansible-lint
   - python3-virtualenvwrapper
@@ -28,7 +28,6 @@ packages:
   - gcc
   - gcc-c++
   - make
-  - kubectl
   - bc
   - unzip
   - tmux
@@ -43,14 +42,19 @@ packages:
   - ruby
   - luarocks
   - golang
+  - iptables
+  - iproute-tc
+  - cri-o
+  - containernetworking-plugins
+  - kubernetes
+  - kubernetes-kubeadm
+  - kubernetes-client
 
-grouplist:
-  - "@core"
+fedora_grouplist:
   - "@virtualization"
   - "@multimedia"
-flatpak:
 
-third_party_repos:
+fedora_third_party_repos:
   - name: docker-ce.repo
     description: Docker CE Stable - $basearch
     baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/stable

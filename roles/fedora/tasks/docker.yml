@@ -14,6 +14,7 @@
     name: "{{ fedora_home_username }}"
     groups: docker
     append: true
+  notify: Reboot system
   become: true
   become_user: root
 
@@ -24,7 +25,6 @@
     state: present
   when:
     - fedora_nvidia
-    - fedora_docker
   become: true
   become_user: root
 

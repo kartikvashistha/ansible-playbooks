@@ -1,0 +1,35 @@
+---
+# vim:ft=yaml.ansible
+- name: Configure IPv4 forwarding and bridge filters
+  ansible.builtin.template:
+    src: templates/etc/modules-load.d/k8s.conf.j2
+    dest: /etc/modules-load.d/k8s.conf
+    mode: '0644'
+
+- name: Load kubernetes linux modules
+  community.general.modprobe:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ kubernetes_linux_modules }}"
+
+- name: Configure sysctl parameters
+  ansible.builtin.template:
+    src: templates/etc/sysctl.d/k8s.conf.j2
+    dest: /etc/sysctl.d/k8s.conf
+    mode: '0644'
+
+- name: Modify system parameters
+  ansible.posix.sysctl:
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+    sysctl_file: /etc/sysctl.d/k8s.conf
+    state: present
+    reload: true
+  with_items: "{{ kubernetes_kernel_params }}"
+  become: true
+
+- name: Enable systemd service crio
+  ansible.builtin.systemd_service:
+    name: crio
+    enabled: true
+    state: started
