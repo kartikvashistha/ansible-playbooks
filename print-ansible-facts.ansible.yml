@@ -2,7 +2,7 @@
 # vim:ft=yaml.ansible
 # Handy little playbook that displays all data that are accessible to Ansible. Useful for debugging and discovery.
 - name: Display system facts that are available to Ansible
-  hosts: local
+  hosts: localhost
   tasks:
     - name: Print all available facts
       ansible.builtin.debug:
