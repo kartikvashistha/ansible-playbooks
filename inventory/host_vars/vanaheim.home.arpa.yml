@@ -1,0 +1,94 @@
+---
+# dotfiles role vars
+dotfiles_gitconfig_name: "Kartik Vashistha"
+dotfiles_gitconfig_email: "kartikv.work@gmail.com"
+dotfiles_wsl: false
+
+# neovim role vars
+neovim_install_nvim_distros: true
+
+# asdf role vars
+asdf_install_via_homebrew: true
+
+# List of non gui pkgs to be installed via homebrew
+macos_brew_pkgs:
+  - ansible
+  - asdf
+  - autoconf
+  - automake
+  - ca-certificates
+  - composer
+  - coreutils
+  - cryptography
+  - fastfetch
+  - fd
+  - fzf
+  - ghostty
+  - git
+  - gnupg
+  - gnutls
+  - go
+  - helm
+  - htop
+  - julia
+  - k9s
+  - kubernetes-cli
+  - lazydocker
+  - lazygit
+  - luajit
+  - luarocks
+  - minikube
+  - molecule
+  - ncurses
+  - neofetch
+  - neovim
+  - node
+  - openldap
+  - php
+  - pyenv
+  - pyenv-virtualenv
+  - pyenv-virtualenvwrapper
+  - python@3.11
+  - python@3.12
+  - ranger
+  - readline
+  - ripgrep
+  - sqlite
+  - sshpass
+  - starship
+  - tmux
+  - tree-sitter
+  - virtualenv
+  - virtualenvwrapper
+  - wget
+
+# List of gui apps to be installed via homebrew casks
+macos_brew_casks:
+  - 1password
+  - 1password-cli
+  - discord
+  - docker
+  - dropbox
+  - firefox
+  - font-fira-mono-nerd-font
+  - font-hack-nerd-font
+  - font-input
+  - font-iosevka-nerd-font
+  - font-jetbrains-mono-nerd-font
+  - google-chrome
+  - google-cloud-sdk
+  - iterm2
+  - jellyfin
+  - jellyfin-media-player
+  - jetbrains-toolbox
+  - kitty
+  - kitty
+  - plex
+  - qbittorrent
+  - rectangle
+  - scroll-reverser
+  - signal
+  - spotify
+  - visual-studio-code
+  - vlc
+  - wezterm
