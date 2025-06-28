@@ -17,6 +17,7 @@ macos_brew_pkgs:
   - autoconf
   - automake
   - ca-certificates
+  - cmake
   - composer
   - coreutils
   - cryptography
@@ -54,6 +55,7 @@ macos_brew_pkgs:
   - ranger
   - readline
   - ripgrep
+  - rustup
   - sqlite
   - sshpass
   - starship

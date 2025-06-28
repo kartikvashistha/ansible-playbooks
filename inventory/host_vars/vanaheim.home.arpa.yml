@@ -3,6 +3,7 @@
 dotfiles_gitconfig_name: "Kartik Vashistha"
 dotfiles_gitconfig_email: "kartikv.work@gmail.com"
 dotfiles_wsl: false
+dotfiles_os: "macos"
 
 # neovim role vars
 neovim_install_nvim_distros: true
@@ -17,6 +18,7 @@ macos_brew_pkgs:
   - autoconf
   - automake
   - ca-certificates
+  - cmake
   - composer
   - coreutils
   - cryptography
@@ -53,6 +55,7 @@ macos_brew_pkgs:
   - ranger
   - readline
   - ripgrep
+  - rustup
   - sqlite
   - sshpass
   - starship

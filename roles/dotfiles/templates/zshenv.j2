@@ -2,4 +2,8 @@
 . "$HOME/.cargo/env"
 {% endif %}
 
+{% if dotfiles_os == "macos" %}
+export PATH="$(which rustup)/bin":$PATH
+{% endif %}
+
 export EDITOR="$(which nvim)"
