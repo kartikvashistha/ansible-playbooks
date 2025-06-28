@@ -34,12 +34,3 @@
     - role: neovim
     - role: kubernetes
 
-- name: Enable systemd service kubelet
-  hosts: kubernetes_master_nodes
-  vars_files: ../inventory/vault.yml
-  tasks:
-    - name: Enable systemd service kubelet
-      ansible.builtin.systemd_service:
-        name: kubelet
-        enabled: true
-        state: started

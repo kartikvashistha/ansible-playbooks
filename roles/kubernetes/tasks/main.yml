@@ -33,3 +33,11 @@
     name: crio
     enabled: true
     state: started
+
+- name: Enable systemd service kubelet
+  ansible.builtin.systemd_service:
+    name: kubelet
+    enabled: true
+    state: started
+    daemon_reload: true
+  become: true
