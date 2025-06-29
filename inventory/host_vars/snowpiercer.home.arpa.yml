@@ -64,7 +64,6 @@ macos_brew_pkgs:
   - virtualenv
   - virtualenvwrapper
   - wget
-  - zed
 
 # List of gui apps to be installed via homebrew casks
 macos_brew_casks:
@@ -96,3 +95,4 @@ macos_brew_casks:
   - visual-studio-code
   - vlc
   - wezterm
+  - zed
