@@ -79,7 +79,7 @@ macos_brew_casks:
   - font-iosevka-nerd-font
   - font-jetbrains-mono-nerd-font
   - google-chrome
-  - google-cloud-sdk
+  - gcloud-cli
   - iterm2
   - jellyfin
   - jellyfin-media-player
@@ -96,3 +96,4 @@ macos_brew_casks:
   - vlc
   - wezterm
   - zed
+  - zen
