@@ -95,3 +95,4 @@ macos_brew_casks:
   - vlc
   - wezterm
   - zed
+  - zen
