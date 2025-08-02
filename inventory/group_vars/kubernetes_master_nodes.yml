@@ -1,0 +1,5 @@
+flannel_release_tag: "v0.27.2"
+
+# role fedora vars
+fedora_packages:
+  - python3-kubernetes

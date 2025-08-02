@@ -1,5 +1,8 @@
 ---
 # vim:ft=yaml.ansible
+- name: Run Pre-requirements task file
+  ansible.builtin.include_tasks: pre-requirements.yml
+
 - name: Configure IPv4 forwarding and bridge filters
   ansible.builtin.template:
     src: templates/etc/modules-load.d/k8s.conf.j2
