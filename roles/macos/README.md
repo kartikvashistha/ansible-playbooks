@@ -24,4 +24,4 @@ Role Variables
 License
 -------
 
-BSD
+MIT

@@ -40,5 +40,5 @@ ansible-playbook -K setup-dotfiles.yml
 License
 -------
 
-BSD
+MIT
 
