@@ -1,6 +1,6 @@
 -- INFO: This file contains information on how to install, setup & enable language servers and their configurations.
 -- Most language servers can be installed via Mason and have a sensible set of default configuration available to us via nvim-lspconfig in order to start using them.
--- When an LSP configuration needs to either be overriden, or setup from scratch (i.e., when not available on nvim-lspconfig), then the rtp/lua/<language_server_name.lua> files are used to perform that.
+-- When an LSP configuration needs to either be overriden, or setup from scratch (i.e., when not available on nvim-lspconfig), then the rtp/lsp/<language_server_name.lua> files are used to perform that.
 -- Once the desired language server and their config overrides are in place, they are enabled via `vim.lsp.enable`.
 
 -- The `tools` table consists of two sub-tables: `mason` and `others`.
