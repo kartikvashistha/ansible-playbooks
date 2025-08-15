@@ -1,54 +1,59 @@
--- INFO: This file contains information on how to install, setup & enable language servers and their configurations.
--- Most language servers can be installed via Mason and have a sensible set of default configuration available to us via nvim-lspconfig in order to start using them.
--- When an LSP configuration needs to either be overriden, or setup from scratch (i.e., when not available on nvim-lspconfig), then the rtp/lsp/<language_server_name.lua> files are used to perform that.
--- Once the desired language server and their config overrides are in place, they are enabled via `vim.lsp.enable`.
-
--- The `tools` table consists of two sub-tables: `mason` and `others`.
--- The `mason` sub table is a collection of lists, which contain all the different kind of packages we want to install via Mason.
--- The `others` sub table is similar, but has certain caveats - for eg: it consists of a language servers list, that tracks language servers installed *outside* of Mason (i.e., via local system package manager, etc.).
-local tools = {
+#INFO: lsp_servers is a table containing a configuration for both mason and non-mason installed language servers with the following keys:
+#####  (1) `name`: Name of the language server to either install via mason, or to refer elsewhere;
+#####  (2) `alias`: This is the `nvim-lspconfig` alias for a language server's configuration. This key is primarily used for enabling a language server via `vim.lsp.enable`;
+local lsp_servers = {
 	mason = {
-		language_servers = {
-			"ansiblels",
-			"clangd",
-			"gopls",
-			"lua_ls",
-			"pyright",
-			"rust_analyzer",
-			"terraformls",
-		},
-		linters = { "ruff" },
-		formatters = { "stylua", "gofumpt", "ruff" },
+		{ name = "ansible-language-server", alias = "ansiblels" },
+		{ name = "bash-language-server", alias = "bashls" },
+		{ name = "clangd", alias = "clangd" },
+		{ name = "gopls", alias = "gopls" },
+		{ name = "lua-language-server", alias = "lua_ls" },
+		{ name = "pyright", alias = "pyright" },
+		{ name = "rust-analyzer", alias = "rust_analyzer" },
+		{ name = "terraform-ls", alias = "terraformls" },
 	},
-	others = {
-		language_servers = {},
-	},
+	system = {},
 }
 
-local allMasonPkgs =
-	vim.iter({ tools.mason.language_servers, tools.mason.linters, tools.mason.formatters }):flatten():totable()
+local mason = {
+	language_servers = function()
+		local servers = {}
+		for _, ls in pairs(lsp_servers.mason) do
+			table.insert(servers, ls.name)
+		end
+		return servers
+	end,
+	linters = { "yamllint" },
+	formatters = { "stylua", "gofumpt", "ruff" },
+}
+
+local allMasonPkgs = vim.iter({ mason.language_servers(), mason.formatters, mason.linters }):flatten():totable()
+
+local servers_to_enable = function()
+	local keys = {}
+
+	for _, value in pairs(lsp_servers.mason) do
+		table.insert(keys, value.alias)
+	end
+
+	for _, value in pairs(lsp_servers.system) do
+		table.insert(keys, value.alias)
+	end
+
+	return keys
+end
 
 -- INFO: Enable all language servers as defined in the tools table
-vim.lsp.enable(vim.tbl_deep_extend("force", tools.mason.language_servers, tools.others.language_servers))
+vim.lsp.enable(servers_to_enable())
 
 return {
 	{
 		"whoissethdaniel/mason-tool-installer.nvim",
 		dependencies = {
 			{ "williamboman/mason.nvim", opts = {}, events = "VeryLazy" },
+			{ "neovim/nvim-lspconfig", events = "VeryLazy" },
 		},
 		events = "VeryLazy",
 		opts = { ensure_installed = allMasonPkgs },
-	},
-
-	-- INFO:This plugin bridges the gap between installed LSP's via Mason and their configuration as provided by nvim-lspconfig.
-	{
-		"williamboman/mason-lspconfig.nvim",
-		dependencies = { "neovim/nvim-lspconfig" },
-		events = "VeryLazy",
-		lazy = true,
-		opts = {
-			automatic_enable = false, -- NOTE: From Mason 2.0 onwards, this option can automatically enable all Mason installed servers via vim.lsp.enable, which can cause a slightly worse startup time.
-		},
 	},
 }
