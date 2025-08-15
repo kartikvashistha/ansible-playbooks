@@ -1,6 +1,7 @@
-#INFO: lsp_servers is a table containing a configuration for both mason and non-mason installed language servers with the following keys:
-#####  (1) `name`: Name of the language server to either install via mason, or to refer elsewhere;
-#####  (2) `alias`: This is the `nvim-lspconfig` alias for a language server's configuration. This key is primarily used for enabling a language server via `vim.lsp.enable`;
+---INFO: lsp_servers is a table containing a configuration for both mason and non-mason installed language servers with the following keys:
+--- 1) `name`: Name of the language server to either install via mason, or to refer elsewhere;
+--- 2) `alias`: This is the `nvim-lspconfig` alias for a language server's configuration. This key is primarily used for enabling a language server via `vim.lsp.enable`;
+
 local lsp_servers = {
 	mason = {
 		{ name = "ansible-language-server", alias = "ansiblels" },
@@ -50,10 +51,9 @@ return {
 	{
 		"whoissethdaniel/mason-tool-installer.nvim",
 		dependencies = {
-			{ "williamboman/mason.nvim", opts = {}, events = "VeryLazy" },
-			{ "neovim/nvim-lspconfig", events = "VeryLazy" },
+			{ "williamboman/mason.nvim", opts = {}, event = "VeryLazy" },
+			{ "neovim/nvim-lspconfig" },
 		},
-		events = "VeryLazy",
 		opts = { ensure_installed = allMasonPkgs },
 	},
 }
