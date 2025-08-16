@@ -1,15 +1,19 @@
 return {
 	{
 		"mfussenegger/nvim-lint",
+		-- event = "BufRead",
+		event = "VeryLazy",
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
+		event = "VeryLazy",
 		main = "ibl",
 		opts = {},
 	},
 	{
 		"numToStr/Comment.nvim",
 		lazy = false,
+		event = "VeryLazy",
 		opts = {},
 	},
 	{
@@ -21,7 +25,7 @@ return {
 	-- Highlight todo, notes, etc in comments
 	{
 		"folke/todo-comments.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = {
 			signs = false,
@@ -30,6 +34,7 @@ return {
 
 	{
 		"stevearc/conform.nvim",
+		event = "VeryLazy",
 		opts = {
 			formatters_by_ft = {
 				lua = { "stylua" },
