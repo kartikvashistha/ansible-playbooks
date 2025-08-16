@@ -28,7 +28,8 @@ local mason = {
 	formatters = { "stylua", "gofumpt", "ruff" },
 }
 
-local allMasonPkgs = vim.iter({ mason.language_servers(), mason.formatters, mason.linters }):flatten():totable()
+local mason_packages_to_install =
+	vim.iter({ mason.language_servers(), mason.formatters, mason.linters }):flatten():totable()
 
 local servers_to_enable = function()
 	local keys = {}
@@ -49,11 +50,15 @@ vim.lsp.enable(servers_to_enable())
 
 return {
 	{
+		"neovim/nvim-lspconfig",
+		event = "BufRead",
+	},
+	{
 		"whoissethdaniel/mason-tool-installer.nvim",
 		dependencies = {
 			{ "williamboman/mason.nvim", opts = {}, event = "VeryLazy" },
-			{ "neovim/nvim-lspconfig" },
 		},
-		opts = { ensure_installed = allMasonPkgs },
+		event = { "BufRead" },
+		opts = { ensure_installed = mason_packages_to_install },
 	},
 }
