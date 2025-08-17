@@ -13,10 +13,10 @@ vim.o.splitright = true
 vim.o.splitbelow = true
 
 -- bootstrap lazy.nvim
-require("configs.lazy")
+require("lua.lazy")
 
 -- bootstrap additional configs
-require("configs.keymaps")
+require("lua.keymaps")
 require("configs.ansible")
 
 -- Set colourscheme
