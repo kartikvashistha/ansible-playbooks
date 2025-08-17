@@ -28,17 +28,6 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
--- capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities())
---
--- vim.lsp.config("*", {
--- 	capabilities = capabilities,
--- 	flags = {
--- 		debounce_text_changes = 500,
--- 	},
--- })
-
 vim.diagnostic.config({
 	-- virtual_lines = true,
 	virtual_text = true,
