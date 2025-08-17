@@ -1,0 +1,11 @@
+galaxy_info:
+  author: Kartik Vashistha
+  description: Ansible role to configure my kubernetes machines.
+  license: MIT
+  min_ansible_version: "2.1"
+  platforms:
+    - name: Fedora
+      versions:
+        - '41'
+  galaxy_tags: []
+dependencies: []
