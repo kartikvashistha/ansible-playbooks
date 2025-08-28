@@ -3,11 +3,12 @@ vim.g.mapleader = " "
 vim.cmd("set termguicolors")
 
 -- Enable vim options
-vim.opt.relativenumber = true
-vim.opt.mouse = "a"
-vim.opt.clipboard = "unnamedplus"
-vim.opt.timeoutlen = 300
-vim.opt.hlsearch = true
+vim.o.relativenumber = true
+vim.o.mouse = "a"
+vim.o.clipboard = "unnamedplus"
+vim.o.timeoutlen = 300
+vim.o.hlsearch = true
+vim.o.winborder = "rounded"
 -- Configure how new splits should be opened
 vim.o.splitright = true
 vim.o.splitbelow = true
