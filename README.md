@@ -24,7 +24,7 @@ ansible-playbook -K print-ansible-facts.yml
 ansible-playbook playbooks/install-dotfiles.yml
 
 # Depending on the playbook, host can be overriden via the `host_group` var (list of hosts can be found in the inventory `hosts.yml` file)
-ansible-playbook playbooks/install-dotfiles.yml -e "host_group=snowpiercer"
+ansible-playbook playbooks/install-dotfiles.yml -e "host_group=vanaheim"
 ```
 
 ## List of Roles
