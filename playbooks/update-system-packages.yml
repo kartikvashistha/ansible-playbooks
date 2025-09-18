@@ -4,10 +4,15 @@
   hosts: "{{ host_group | default('localhost') }}"
 
   tasks:
-    - name: Upgrade all packages on a Fedora system
+    - name: Upgrade all packages on a Fedora host(s)
       ansible.builtin.dnf:
         name: "*"
         state: latest # noqa package-latest
       when: ansible_facts['distribution'] == "Fedora"
       become: true
       become_user: root
+
+    - name: Upgrade all packages on a macOS host(s)
+      community.general.homebrew:
+        update_homebrew: true
+      when: ansible_facts['distribution'] | lower == "macosx"
