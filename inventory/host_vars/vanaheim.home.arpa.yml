@@ -59,6 +59,7 @@ macos_brew_pkgs:
   - sshpass
   - starship
   - tmux
+  - tree-sitter-cli
   - tree-sitter
   - virtualenv
   - virtualenvwrapper

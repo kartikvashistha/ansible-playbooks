@@ -11,6 +11,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
+		branch = "main",
 		main = "nvim-treesitter.configs", -- Sets main module to use for opts
 		event = "VeryLazy",
 		opts = {
