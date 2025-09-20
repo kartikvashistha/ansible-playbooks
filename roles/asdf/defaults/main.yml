@@ -5,7 +5,7 @@ asdf_dir: "{{ asdf_home_dir }}/.asdf"
 asdf_releases_dir: "{{ asdf_home_dir }}/.cache/asdf-releases"
 asdf_tool_file_path: "{{ ansible_facts['env']['HOME'] }}"
 
-asdf_release_tag: "v0.16.7"
+asdf_release_tag: "v0.18.0"
 asdf_release_platform: "linux"
 asdf_release_arch: "amd64"
 asdf_archive_file: "asdf-{{ asdf_release_tag }}-{{ asdf_release_platform }}-{{ asdf_release_arch }}.tar.gz"
