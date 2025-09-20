@@ -9,6 +9,8 @@ dotfiles_gitconfig_email: # Git config email
 
 dotfiles_wsl: false # Boolean value to configure if the setup is WSL
 
+dotfiles_append_to_path: "" # String value to append at the end of the PATH variable.
+
 dotfiles_xdg_config_dirs: # List of XDG config dirs to create
   - wezterm
   - tmux

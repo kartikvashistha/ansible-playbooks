@@ -7,13 +7,11 @@ fi
 
 source ~/.omzrc
 source virtualenvwrapper.sh
-
-. ~/.asdf/plugins/java/set-java-home.zsh
+source ~/.asdf/plugins/java/set-java-home.zsh
 
 # Aliases
 alias k='kubectl'
 alias gac='git add . && cz'
-
 alias vim=nvim
 
 {% if dotfiles_wsl -%}

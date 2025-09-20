@@ -1,9 +1,1 @@
-{% if dotfiles_os == "fedora" %}
 . "$HOME/.cargo/env"
-{% endif %}
-
-{% if dotfiles_os == "macosx" %}
-export PATH="$(which rustup)/bin":$PATH
-{% endif %}
-
-export EDITOR="$(which nvim)"

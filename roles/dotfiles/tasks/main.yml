@@ -17,6 +17,12 @@
     dest: "{{ dotfiles_home_user_path }}/.zshenv"
     mode: "0644"
 
+- name: Create .zprofile file
+  ansible.builtin.template:
+    src: templates/zprofile.j2
+    dest: "{{ dotfiles_home_user_path }}/.zprofile"
+    mode: "0644"
+
 - name: Create .omzrc file
   ansible.builtin.template:
     src: templates/omzrc.j2
