@@ -1,6 +1,10 @@
 {% if dotfiles_os == "macosx" %}
 eval "$($(which brew) shellenv)"
 export PATH="$(which rustup)/bin":$PATH{% if dotfiles_append_to_path != "" %}:{{ dotfiles_append_to_path }}{% endif %}
+{% else %}
+{% if dotfiles_append_to_path != "" %}
+export PATH=$PATH:{{ dotfiles_append_to_path }}
+{% endif %}
 {% endif %}
 
 export EDITOR="$(which nvim)"
