@@ -9,6 +9,10 @@ source ~/.omzrc
 source virtualenvwrapper.sh
 source ~/.asdf/plugins/java/set-java-home.zsh
 
+{% if dotfiles_os == 'macosx' %}
+export LSCOLORS='exfxcxdxbxegedabagacad'
+{% endif %}
+
 # Aliases
 alias k='kubectl'
 alias gac='git add . && cz'
