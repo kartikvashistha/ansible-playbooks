@@ -4,6 +4,15 @@ dotfiles_gitconfig_name: "Kartik Vashistha"
 dotfiles_gitconfig_email: "kartikv.work@gmail.com"
 dotfiles_wsl: false
 dotfiles_append_to_path: "$HOME/.local/bin"
+dotfiles_machine_type: personal
+dotfiles_xdg_config_dirs:
+  - alacritty
+  - ghostty
+  - kitty
+  - nvim
+  - tmux
+  - wezterm
+  - zed
 
 # neovim role vars
 neovim_install_nvim_distros: true

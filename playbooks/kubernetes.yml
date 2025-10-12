@@ -13,6 +13,20 @@
   hosts: kubernetes_master_nodes
   vars_files: ../inventory/vault.yml
   tasks:
+    - name: Create .kube directory
+      ansible.builtin.file:
+        state: directory
+        path: "{{ ansible_env.HOME }}/.kube"
+        mode: '0755'
+
+    - name: Copy kube config file to home dir
+      ansible.builtin.copy:
+        remote_src: true
+        src: /etc/kubernetes/admin.conf
+        dest: "{{ ansible_env.HOME }}/.kube/config"
+      become: true
+
+    # No idea why this is not able to use my local kube config. Hence the above two tasks.
     - name: Install flannel for cluster wide networking
       kubernetes.core.k8s:
         definition: '{{ lookup("url", "https://raw.githubusercontent.com/flannel-io/flannel/{{ flannel_release_tag }}/Documentation/kube-flannel.yml", split_lines=False) | from_yaml_all | list }}'

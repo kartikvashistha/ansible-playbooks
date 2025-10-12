@@ -7,7 +7,9 @@ fi
 
 source ~/.omzrc
 source virtualenvwrapper.sh
+{% if dotfiles_machine_type == 'personal' %}
 source ~/.asdf/plugins/java/set-java-home.zsh
+{% endif -%}
 
 {% if dotfiles_os == 'macosx' %}
 export LSCOLORS='exfxcxdxbxegedabagacad'

@@ -54,12 +54,6 @@
     mode: '0755'
   loop: "{{ dotfiles_xdg_config_dirs }}"
 
-- name: Install Wezterm configuration
-  ansible.builtin.template:
-    src: templates/wezterm.j2
-    dest: "{{ dotfiles_home_user_path }}/.config/wezterm/wezterm.lua"
-    mode: "0644"
-
 - name: Clone tpm   # noqa: latest
   ansible.builtin.git:
     repo: 'https://github.com/tmux-plugins/tpm.git'
@@ -72,41 +66,6 @@
     dest: "{{ dotfiles_home_user_path }}/.config/tmux/tmux.conf"
     mode: "0644"
 
-- name: Install kitty theme
-  ansible.builtin.template:
-    src: templates/kitty/current-theme.conf.j2
-    dest: "{{ dotfiles_home_user_path }}/.config/kitty/current-theme.conf"
-    mode: "0644"
-
-- name: Install kitty configuration
-  ansible.builtin.template:
-    src: templates/kitty/kitty.conf.j2
-    dest: "{{ dotfiles_home_user_path }}/.config/kitty/kitty.conf"
-    mode: "0644"
-
-- name: Install alacritty configuration
-  ansible.builtin.template:
-    src: templates/alacritty.toml.j2
-    dest: "{{ dotfiles_home_user_path }}/.config/alacritty/alacritty.toml"
-    mode: "0644"
-
-- name: Install Ghostty configuration
-  ansible.builtin.template:
-    src: templates/ghostty.j2
-    dest: "{{ dotfiles_home_user_path }}/.config/ghostty/config"
-    mode: "0644"
-
-- name: Install Zed configuration
-  ansible.builtin.template:
-    src: "{{ item.src }}"
-    dest: "{{ dotfiles_home_user_path }}/.config/zed/{{ item.dest }}"
-    mode: "0644"
-  with_items:
-    - { src: '../templates/zed/settings.json.j2', dest: 'settings.json' }
-    - { src: '../templates/zed/keymap.json.j2', dest: 'keymap.json' }
-
-- name: Install commitizen configuration
-  ansible.builtin.template:
-    src: templates/czrc.j2
-    dest: "{{ dotfiles_home_user_path }}/.czrc"
-    mode: "0644"
+- name: Run tasks exclusive to configure a personal machine
+  ansible.builtin.include_tasks: personal.yml
+  when: dotfiles_machine_type == 'personal'
