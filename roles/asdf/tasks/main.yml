@@ -5,13 +5,11 @@
     name:
       - asdf
     state: present
-  when: asdf_install_via_homebrew
+  when: os == "macosx"
 
-- name: Install asdf binary from releases
-  ansible.builtin.include_tasks: asdf_install.yml
-  when:
-    - asdf_install_via_gh_releases
-    - not asdf_install_via_homebrew
+- name: Install asdf mamually
+  ansible.builtin.include_tasks: manual_install.yml
+  when: os == "fedora"
 
 - name: Create .asdf directory
   ansible.builtin.file:
@@ -34,15 +32,3 @@
     create: true
     mode: '0644'
   with_items: "{{ asdf_plugins }}"
-
-- name: Append asdf binary to $PATH
-  ansible.builtin.lineinfile:
-    path: "{{ asdf_file_to_append_path_in }}"
-    regexp: "^export PATH={{ asdf_binary_path }}:$PATH"
-    line: 'export PATH={{ asdf_binary_path }}:$PATH'
-    create: true
-    state: present
-    mode: '0644'
-  when:
-    - asdf_install_via_gh_releases
-    - not asdf_install_via_homebrew

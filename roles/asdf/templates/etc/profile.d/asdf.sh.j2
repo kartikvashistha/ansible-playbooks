@@ -1,5 +1,7 @@
-{% if dotfiles_os == "fedora" -%}
-export ASDF_DATA_DIR={{ dotfiles_home_user_path }}
-export ASDF_BIN={{ dotfiles_home_user_path }}/.local/bin/asdf
-PATH=$PATH:~/.local/bin:$ASDF_BIN:$ASDF_DATA_DIR/shims
+{% if os == "fedora" -%}
+ASDF_BIN="{{ user_home_dir }}/.local/bin"
+
+if ! [[ $PATH =~ $ASDF_BIN ]]; then
+  PATH="$PATH:$ASDF_BIN"
+fi
 {% endif %}

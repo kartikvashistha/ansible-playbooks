@@ -10,21 +10,30 @@
     url: "{{ asdf_release_url }}"
     dest: "{{ asdf_releases_dir }}/{{  asdf_release_tag }}"
     checksum: "{{ asdf_checksum_algorithm }}:{{ asdf_release_checksum_url }}"
-    mode: "0644"
+    mode: '0644'
 
 - name: Extract asdf binary from archive
   ansible.builtin.unarchive:
     src: "{{ asdf_releases_dir }}/{{ asdf_release_tag }}/{{ asdf_archive_file }}"
     dest: "{{ asdf_releases_dir }}/{{ asdf_release_tag }}"
 
-- name: Ensure dir exists - "{{ asdf_binary_path }}"
+- name: Ensure binary installation dir exists - "{{ asdf_binary_path }}"
   ansible.builtin.file:
     state: directory
     path: "{{ asdf_binary_path }}"
     mode: '0755'
 
-- name: Copy asdf binary to - "{{ asdf_binary_path }}"
+- name: Copy asdf binary to installation dir - "{{ asdf_binary_path }}"
   ansible.builtin.copy:
     src: "{{ asdf_releases_dir }}/{{ asdf_release_tag }}/{{ asdf_binary_name }}"
     dest: "{{ asdf_binary_path }}"
-    mode: "0755"
+    mode: '0755'
+
+# Supports any linux distro that reads /etc/profile.d/ to set path. But I'm gonna execute this only for Fedora for the time being.
+- name: Create /etc/profile.d entry
+  ansible.builtin.template:
+    src: templates/etc/profile.d/asdf.sh.j2
+    dest: /etc/profile.d/asdf.sh
+    mode: '0644'
+  become: true
+  when: os == "fedora"

@@ -1,9 +1,8 @@
 ---
 # defaults file for asdf
-asdf_home_dir: "{{ ansible_facts['env']['HOME'] }}"
-asdf_dir: "{{ asdf_home_dir }}/.asdf"
-asdf_releases_dir: "{{ asdf_home_dir }}/.cache/asdf-releases"
-asdf_tool_file_path: "{{ ansible_facts['env']['HOME'] }}"
+asdf_dir: "{{ user_home_dir }}/.asdf"
+asdf_releases_dir: "{{ user_home_dir }}/.cache/asdf-releases"
+asdf_tool_file_path: "{{ user_home_dir }}"
 
 asdf_release_tag: "v0.18.0"
 asdf_release_platform: "linux"
@@ -16,11 +15,7 @@ asdf_release_checksum_url: "{{ asdf_releases_url }}/{{ asdf_release_tag }}/asdf-
                           {{ asdf_release_arch }}.tar.gz.{{ asdf_checksum_algorithm }}"
 
 asdf_binary_name: "asdf"
-asdf_binary_path: "{{ asdf_home_dir }}/.local/bin"
-asdf_file_to_append_path_in: "{{ asdf_home_dir }}/.zprofile"
-
-asdf_install_via_homebrew: false
-asdf_install_via_gh_releases: false
+asdf_binary_path: "{{ user_home_dir }}/.local/bin"
 
 asdf_plugins:
   - name: "terraform"
