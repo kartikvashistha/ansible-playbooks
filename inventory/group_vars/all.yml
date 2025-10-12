@@ -1,0 +1,2 @@
+user_home_dir: "{{ ansible_facts['env']['HOME'] }}"
+os: "{{ ansible_facts['distribution'] | lower }}"
