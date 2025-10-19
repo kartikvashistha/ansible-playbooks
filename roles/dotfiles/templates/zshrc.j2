@@ -13,6 +13,7 @@ source ~/.asdf/plugins/java/set-java-home.zsh
 
 {% if dotfiles_os == 'macosx' %}
 export LSCOLORS='exfxcxdxbxegedabagacad'
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES # Needed for ansible when running on a macos control node
 {% endif %}
 
 # Aliases
