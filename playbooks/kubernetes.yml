@@ -2,7 +2,6 @@
 # Run playbook via: ansible-playbook playbooks/kubernetes.yml --vault-password-file=bin/vault_passwd_file.sh
 - name: Common tasks across all kubernetes hosts
   hosts: kubernetes
-  vars:
   roles:
     - role: fedora
     - role: dotfiles
@@ -23,6 +22,7 @@
         remote_src: true
         src: /etc/kubernetes/admin.conf
         dest: "{{ ansible_env.HOME }}/.kube/config"
+        mode: '0644'
       become: true
 
     # No idea why this is not able to use my local kube config. Hence the above two tasks.

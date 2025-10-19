@@ -9,3 +9,6 @@ kubernetes_kernel_params:
     value: 1
   - name: net.ipv4.ip_forward
     value: 1
+
+# List of ssh public keys that need to be added to the authorized keys file
+kubernetes_authorized_keys: []

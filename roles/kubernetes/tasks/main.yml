@@ -1,5 +1,13 @@
 ---
 # vim:ft=yaml.ansible
+- name: Copy authorized keys to the servers
+  ansible.posix.authorized_key:
+    user: "{{ ansible_env.USER }}"
+    state: present
+    key: "{{ item }}"
+  with_items: "{{ kubernetes_authorized_keys }}"
+  when: kubernetes_authorized_keys | length > 0
+
 - name: Run Pre-requirements task file
   ansible.builtin.include_tasks: pre-requirements.yml
 

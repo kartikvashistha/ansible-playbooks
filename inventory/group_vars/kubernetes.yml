@@ -66,3 +66,6 @@ fedora_third_party_repos:
     gpgcheck: true
     repo_gpgcheck: false
     gpgkey: https://download.docker.com/linux/fedora/gpg
+
+kubernetes_authorized_keys:
+  - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIInfQVFhY0rtzKFS5SlkW3c7JsMVqyREpJPfcVKAhHV5"
