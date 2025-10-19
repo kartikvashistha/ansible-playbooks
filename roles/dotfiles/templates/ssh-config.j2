@@ -2,7 +2,16 @@ Host *
   SetEnv TERM=xterm-256color
   {% if dotfiles_os == "fedora" %}
   IdentityAgent ~/.1password/agent.sock
-  {% endif -%}
-  {% if dotfiles_os=="macosx" %}
-  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-  {% endif -%}
+  {% endif %}
+{% if dotfiles_os=="macosx" %}IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"{% endif %}
+
+
+{% if dotfiles_machine_type == "personal" %}
+Host velen:
+  HostName velen.home.arpa
+  User {{ vault_velen_ansible_user }}
+
+Host oxenfurt:
+  HostName oxenfurt.home.arpa
+  User {{ vault_oxenfurt_ansible_user }}
+{% endif -%}
