@@ -2,7 +2,7 @@
 # Run playbook via: ansible-playbook playbooks/kubernetes.yml --vault-password-file=bin/vault_passwd_file.sh
 - name: Common tasks across all kubernetes hosts
   hosts: kubernetes
-  vars_files: ../inventory/vault.yml
+  vars:
   roles:
     - role: fedora
     - role: dotfiles
@@ -11,7 +11,6 @@
 
 - name: Specific tasks for kubernetes master nodes
   hosts: kubernetes_master_nodes
-  vars_files: ../inventory/vault.yml
   tasks:
     - name: Create .kube directory
       ansible.builtin.file:
@@ -37,6 +36,6 @@
         name: "{{ item }}"
         state: present
         taints:
-          - effect: NoSchedule 
+          - effect: NoSchedule
             key: "node-role.kubernetes.io/control-plane"
       with_items: "{{ ansible_facts['hostname'] }}"
