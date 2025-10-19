@@ -7,7 +7,7 @@
     state: present
   when: os == "macosx"
 
-- name: Install asdf mamually
+- name: Install asdf manually
   ansible.builtin.include_tasks: manual_install.yml
   when: os == "fedora"
 
