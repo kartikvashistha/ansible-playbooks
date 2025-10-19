@@ -54,6 +54,7 @@ macos_brew_pkgs:
   - neovim
   - node
   - openldap
+  - openssh
   - php
   - pyenv
   - pyenv-virtualenv
@@ -63,6 +64,7 @@ macos_brew_pkgs:
   - ranger
   - readline
   - ripgrep
+  - rsync
   - rustup
   - sqlite
   - sshpass
