@@ -32,6 +32,7 @@ macos_brew_pkgs:
   - cryptography
   - fastfetch
   - fd
+  - fluxcd/tap/flux
   - fzf
   - ghostty
   - git
@@ -108,3 +109,6 @@ macos_brew_casks:
   - wezterm
   - zed
   - zen
+
+macos_brew_taps:
+  - fluxcd/tap
