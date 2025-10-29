@@ -4,6 +4,11 @@
   community.general.homebrew:
     update_homebrew: true
 
+- name: Install brew taps
+  community.general.homebrew_tap:
+    name: "{{ macos_brew_taps }}"
+    state: present
+
 - name: Install brew pkgs
   community.general.homebrew:
     name: "{{ macos_brew_pkgs }}"
