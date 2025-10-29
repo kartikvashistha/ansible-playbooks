@@ -9,25 +9,25 @@
   ansible.builtin.template:
     src: templates/zshrc.j2
     dest: "{{ dotfiles_home_user_path }}/.zshrc"
-    mode: "0644"
+    mode: '0644'
 
 - name: Create .zshenv file
   ansible.builtin.template:
     src: templates/zshenv.j2
     dest: "{{ dotfiles_home_user_path }}/.zshenv"
-    mode: "0644"
+    mode: '0644'
 
 - name: Create .zprofile file
   ansible.builtin.template:
     src: templates/zprofile.j2
     dest: "{{ dotfiles_home_user_path }}/.zprofile"
-    mode: "0644"
+    mode: '0644'
 
 - name: Create .omzrc file
   ansible.builtin.template:
     src: templates/omzrc.j2
     dest: "{{ dotfiles_home_user_path }}/.omzrc"
-    mode: "0644"
+    mode: '0644'
 
 - name: Create .ssh directory
   ansible.builtin.file:
@@ -39,7 +39,7 @@
   ansible.builtin.template:
     src: templates/ssh-config.j2
     dest: "{{ dotfiles_home_user_path }}/.ssh/config"
-    mode: '0600'
+    mode: '0644'
 
 - name: Create gitconfig
   ansible.builtin.template:
@@ -64,7 +64,7 @@
   ansible.builtin.template:
     src: templates/tmux.conf.j2
     dest: "{{ dotfiles_home_user_path }}/.config/tmux/tmux.conf"
-    mode: "0644"
+    mode: '0644'
 
 - name: Run tasks exclusive to configure a personal machine
   ansible.builtin.include_tasks: personal.yml
