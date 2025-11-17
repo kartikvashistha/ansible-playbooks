@@ -22,7 +22,7 @@
 
 - name: Install packges to enable video acceleration in media players
   ansible.builtin.dnf:
-    name: vdpauinfo, nvidia-vaapi-driver, libva-utils
+    name: vdpauinfo, libva-nvidia-driver, libva-utils
     state: present
   become: true
   become_user: root
