@@ -48,11 +48,11 @@ fedora_packages:
   - golang
   - iptables
   - iproute-tc
-  - cri-o
+  - cri-o1.34
   - containernetworking-plugins
-  - kubernetes
-  - kubernetes-kubeadm
-  - kubernetes-client
+  - kubernetes1.34
+  - kubernetes1.34-kubeadm
+  - kubernetes1.34-client
 
 fedora_grouplist:
   - "@virtualization"
