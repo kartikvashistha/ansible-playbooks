@@ -42,7 +42,6 @@ fedora_docker_packages:
 fedora_grouplist: []
 
 # (List) of flatpak packages to install. Example:
-# - com.spotify.Client
 # - org.telegram.desktop
 # - us.zoom.Zoom
 # - org.signal.Signal

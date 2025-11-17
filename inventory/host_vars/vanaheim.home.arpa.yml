@@ -103,7 +103,6 @@ macos_brew_casks:
   - rectangle
   - scroll-reverser
   - signal
-  - spotify
   - visual-studio-code
   - vlc
   - wezterm

@@ -87,7 +87,6 @@ fedora_grouplist:
   # this apparently needs to be (re-)installed after every new fedora release so that we can get the latest software after upgrading to a new release
   - "@workstation-product-environment"
 fedora_flatpak:
-  - com.spotify.Client
   - org.signal.Signal
   - org.telegram.desktop
   - us.zoom.Zoom
