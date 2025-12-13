@@ -78,6 +78,7 @@ fedora_packages:
   - unzip
   - vim-enhanced
   - wezterm
+  - zen-browser
 
 fedora_grouplist:
   - "@core"
@@ -157,3 +158,9 @@ fedora_third_party_repos:
     gpgkey: https://repos.fyralabs.com/terra$releasever/key.asc
     skip_if_unavailable: true
     metadata_expire: 4h
+
+fedora_copr_repos:
+  - name: sneexy/zen-browser
+    state: enabled
+  - name: wezfurlong/wezterm-nightly
+    state: enabled
