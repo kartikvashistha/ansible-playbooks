@@ -46,6 +46,7 @@ fedora_packages:
   - gnome-tweaks
   - golang
   - google-chrome-stable
+  - helm
   - htop
   - https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
   - iosevka-nerd-fonts
@@ -57,6 +58,7 @@ fedora_packages:
   - julia
   - kitty
   - kubectl
+  - k9s
   - luarocks
   - make
   - neovim
