@@ -20,7 +20,7 @@ asdf_binary_path: "{{ user_home_dir }}/.local/bin"
 asdf_plugins:
   - name: "terraform"
     repo: "https://github.com/asdf-community/asdf-hashicorp.git"
-    default_version: "1.8.3"
+    default_version: "1.14.3"
   - name: "java"
     repo: "https://github.com/halcyon/asdf-java.git"
     default_version: "temurin-21.0.2+13.0.LTS"
