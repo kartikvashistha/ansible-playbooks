@@ -28,6 +28,13 @@
     dest: "{{ dotfiles_home_user_path }}/.config/ghostty/config"
     mode: "0644"
 
+- name: Install Ghostty theme Afterglow
+  ansible.builtin.template:
+    src: templates/ghostty-themes/Afterglow.j2
+    dest: "{{ dotfiles_home_user_path }}/.config/ghostty/themes/Afterglow"
+    mode: "0644"
+  when: ansible_facts['distribution'] == "Fedora"
+
 - name: Install Zed configuration
   ansible.builtin.template:
     src: "{{ item.src }}"

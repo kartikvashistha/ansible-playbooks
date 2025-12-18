@@ -8,6 +8,7 @@ dotfiles_machine_type: personal
 dotfiles_xdg_config_dirs:
   - alacritty
   - ghostty
+  - ghostty/themes
   - kitty
   - nvim
   - tmux
