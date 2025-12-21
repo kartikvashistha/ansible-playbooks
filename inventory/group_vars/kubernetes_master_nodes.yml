@@ -1,4 +1,4 @@
-flannel_release_tag: "v0.27.2"
+flannel_release_tag: v0.27.4
 
 # role fedora vars
 fedora_packages:
