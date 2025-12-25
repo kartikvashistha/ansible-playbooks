@@ -21,6 +21,7 @@ asdf_install_via_homebrew: true
 
 # List of non gui pkgs to be installed via homebrew
 macos_brew_pkgs:
+  - alacritty
   - ansible
   - asdf
   - autoconf
@@ -57,6 +58,7 @@ macos_brew_pkgs:
   - openldap
   - openssh
   - php
+  - pulumi
   - pyenv
   - pyenv-virtualenv
   - pyenv-virtualenvwrapper
