@@ -12,6 +12,10 @@ dotfiles_xdg_config_dirs:
   - tmux
   - wezterm
   - zed
+dotfiles_home_user_dirs:
+  - code/github.com/personal
+  - code/github.com/others
+  - code/github.com/forks
 
 # neovim role vars
 neovim_install_nvim_distros: true

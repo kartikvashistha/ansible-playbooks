@@ -69,3 +69,10 @@
 - name: Run tasks exclusive to configure a personal machine
   ansible.builtin.include_tasks: personal.yml
   when: dotfiles_machine_type == 'personal'
+
+- name: Create home user dirs
+  ansible.builtin.file:
+    state: directory
+    path: "{{ dotfiles_home_user_path }}/{{ item }}"
+    mode: '0755'
+  loop: "{{ dotfiles_home_user_dirs }}"

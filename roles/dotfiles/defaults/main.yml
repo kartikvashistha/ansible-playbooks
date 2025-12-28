@@ -14,3 +14,5 @@ dotfiles_append_to_path: "" # String value to append at the end of the PATH vari
 dotfiles_machine_type: "" # Supported values: personal, server
 
 dotfiles_xdg_config_dirs: [] # List of XDG config dirs to create
+
+dotfiles_home_user_dirs: [] # List of directories to create under the $HOME user
