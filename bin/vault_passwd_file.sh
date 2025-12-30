@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$(op read "op://Private/ansible-vault/password")"
+op read "op://Private/ansible-vault/password"
