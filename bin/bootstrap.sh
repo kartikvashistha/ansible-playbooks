@@ -8,6 +8,7 @@ is_macos() {
   echo "Detected a macOS system!"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   brew install ansible
+  brew install --cask 1password 1password-cli
   ansible-galaxy collection install community.general
 }
 
