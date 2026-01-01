@@ -1,12 +1,12 @@
 [user]
-	email = "{{ dotfiles_gitconfig_email }}"
-	name = "{{ dotfiles_gitconfig_name }}"
+  email = "{{ dotfiles_gitconfig_email }}"
+  name = "{{ dotfiles_gitconfig_name }}"
 {% if dotfiles_machine_type == "personal" %}
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIInfQVFhY0rtzKFS5SlkW3c7JsMVqyREpJPfcVKAhHV5
 {% endif %}
 
 [push]
-	autoSetupRemote = true
+  autoSetupRemote = true
 
 {% if dotfiles_wsl %}
 [core]
