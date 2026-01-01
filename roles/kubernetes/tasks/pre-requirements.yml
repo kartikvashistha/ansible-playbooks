@@ -2,13 +2,13 @@
 - name: Check if the swap-create@zram0 service file exists
   ansible.builtin.stat:
     path: /usr/lib/systemd/system/swap-create@zram0
-  register: swapcreate
+  register: kubernetes_swapcreate
 - name: Disable swap zram service
   ansible.builtin.systemd_service:
     name: swap-create@zram0
     state: stopped
     enabled: false
-  when: swapcreate.stat.exists
+  when: kubernetes_swapcreate.stat.exists
 - name: Remove zram-generator-defaults package
   ansible.builtin.dnf:
     name: zram-generator-defaults
