@@ -11,6 +11,9 @@ For other distributions, please feel free to install Ansible via your package ma
 
 ## How to run a playbook
 
+> [!WARNING]
+> You might have to comment out the line `vault_password_file=./bin/vault_passwd_file.sh` in the `ansible.cfg` file at the root of this repo when running a playbook from within this repo for localhost.
+
 ```sh
 ansible-playbook -K <playbook-name>
 ```
@@ -27,6 +30,7 @@ ansible-playbook playbooks/install-dotfiles.yml
 ansible-playbook playbooks/install-dotfiles.yml -e "host_group=vanaheim"
 ```
 
+
 ## List of Roles
 Here is a list of my personally written and maintained Ansible roles that I use to setup and configure my various machines. 
 
@@ -36,4 +40,3 @@ Here is a list of my personally written and maintained Ansible roles that I use 
 4. `kubernetes` - To configure and setup all of my kubernetes hosts with common settings;
 5. `macos` - To configure and setup my macOS machines;
 6. `neovim` - To install my nvim config (and optionally other neovim distros) on my linux and macOS machines;
-

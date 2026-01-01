@@ -10,7 +10,7 @@ Additionally, this role also provides the ability to install and access multiple
 > Please backup your exisiting neovim config before running the `install-nvim-config.yml` as depending on the options passed, this might overwrite your existing neovim config.
 
 > [!NOTE]
-> You might also have to comment out the line `vault_password_file=./bin/vault_passwd_file.sh` in the `ansible.cfg` file at the root of this option when running the `install-nvim-config.yml` playbook from within this repo.
+> You might also have to comment out the line `vault_password_file=./bin/vault_passwd_file.sh` in the `ansible.cfg` file at the root of this repo when running the `install-nvim-config.yml` playbook from within this repo.
 
 To install and trial my neovim config, the `install-nvim-config.yml` playbook can be run as follows:
 
