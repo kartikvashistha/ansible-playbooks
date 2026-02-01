@@ -25,13 +25,6 @@
         mode: '0644'
       become: true
 
-    # No idea why this is not able to use my local kube config. Hence the above two tasks.
-    - name: Install flannel for cluster wide networking
-      kubernetes.core.k8s:
-        definition: '{{ lookup("url", "https://raw.githubusercontent.com/flannel-io/flannel/{{ flannel_release_tag }}/Documentation/kube-flannel.yml",
-         split_lines=False) | from_yaml_all | list }}'
-        state: present
-
     - name: Taint master nodes to prevent application pods from running on it
       kubernetes.core.k8s_taint:
         name: "{{ item }}"
