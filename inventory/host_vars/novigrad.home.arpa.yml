@@ -80,6 +80,7 @@ fedora_packages:
   - rustup
   - samba
   - steam
+  - tree-sitter-cli
   - thunderbird
   - tmux
   - unzip
