@@ -2,7 +2,7 @@
 # vim:ft=yaml.ansible
 - name: Copy authorized keys to the servers
   ansible.posix.authorized_key:
-    user: "{{ ansible_env.USER }}"
+    user: "{{ ansible_facts['env']['USER'] }}"
     state: present
     key: "{{ item }}"
   with_items: "{{ kubernetes_authorized_keys }}"
