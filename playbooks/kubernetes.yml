@@ -40,6 +40,8 @@
         release_namespace: kube-system
         chart_ref: "oci://quay.io/cilium/charts/cilium"
         chart_version: 1.19.1
+        wait: true
+        force: false
         values:
           ipam:
             operator:
