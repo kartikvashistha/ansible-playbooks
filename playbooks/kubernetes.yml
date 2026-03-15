@@ -14,14 +14,14 @@
     - name: Create .kube directory
       ansible.builtin.file:
         state: directory
-        path: "{{ ansible_env.HOME }}/.kube"
+        path: "{{ ansible_facts['env']['HOME'] }}/.kube"
         mode: '0755'
 
     - name: Copy kube config file to home dir
       ansible.builtin.copy:
         remote_src: true
         src: /etc/kubernetes/admin.conf
-        dest: "{{ ansible_env.HOME }}/.kube/config"
+        dest: "{{ ansible_facts['env']['HOME'] }}/.kube/config"
         mode: '0644'
       become: true
 
