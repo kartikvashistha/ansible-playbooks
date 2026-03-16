@@ -1,13 +1,13 @@
 theme = Afterglow
 
 font-family= Iosevka Nerd Font
-{% if dotfiles_os == "fedora" -%}
+{% if common_os | lower == "fedora" -%}
 font-size = 13.5
 gtk-wide-tabs = true
 gtk-titlebar = true
 {% endif -%}
 
-{% if dotfiles_os == "macosx" -%}
+{% if common_os | lower == "macosx" -%}
 font-size = 18
 window-padding-x = 0
 window-padding-y = 0

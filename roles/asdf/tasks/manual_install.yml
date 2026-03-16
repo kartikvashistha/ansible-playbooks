@@ -36,4 +36,4 @@
     dest: /etc/profile.d/asdf.sh
     mode: '0644'
   become: true
-  when: os == "fedora"
+  when: common_os | lower == "fedora"

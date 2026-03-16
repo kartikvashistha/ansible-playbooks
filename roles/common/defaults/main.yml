@@ -1,0 +1,5 @@
+# vim:ft=yaml.ansible
+common_os: "{{ ansible_facts['distribution'] }}" # OS which a playbook using a role will target
+common_machine_type: "PLACEHOLDER_VALUE" # Type of machine on which a playbook will execute against. Supported values: personal, server
+
+common_user_home_dir: "{{ ansible_facts['env']['HOME'] }}"

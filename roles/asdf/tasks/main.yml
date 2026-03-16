@@ -5,11 +5,11 @@
     name:
       - asdf
     state: present
-  when: os == "macosx"
+  when: common_os | lower== "macosx"
 
 - name: Install asdf manually
   ansible.builtin.include_tasks: manual_install.yml
-  when: os == "fedora"
+  when: common_os | lower == "fedora"
 
 - name: Create .asdf directory
   ansible.builtin.file:

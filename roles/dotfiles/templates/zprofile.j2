@@ -1,4 +1,4 @@
-{% if dotfiles_os == "macosx" %}
+{% if common_os | lower == "macosx" %}
 eval "$($(which brew) shellenv)"
 export PATH="$(which rustup)/bin":$PATH{% if dotfiles_append_to_path != "" %}:{{ dotfiles_append_to_path }}{% endif %}
 {% else %}

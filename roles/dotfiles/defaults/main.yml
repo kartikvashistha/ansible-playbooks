@@ -1,8 +1,6 @@
 ---
 # defaults file for dotfiles
-dotfiles_home_user_path: "{{ user_home_dir }}" # Home Path of the user where you want to install the dotfiles
-
-dotfiles_os: "{{ os }}" # Values supported by the role are: macosx, fedora
+dotfiles_home_user_path: "{{ common_user_home_dir }}" # Home Path of the user where you want to install the dotfiles
 
 dotfiles_gitconfig_name: # Git config name
 dotfiles_gitconfig_email: # Git config email
@@ -10,8 +8,6 @@ dotfiles_gitconfig_email: # Git config email
 dotfiles_wsl: false # Boolean value to configure if the setup is WSL
 
 dotfiles_append_to_path: "" # String value to append at the end of the PATH variable.
-
-dotfiles_machine_type: "" # Supported values: personal, server
 
 dotfiles_xdg_config_dirs: [] # List of XDG config dirs to create
 

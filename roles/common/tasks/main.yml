@@ -1,0 +1,12 @@
+# vim:ft=yaml.ansible
+- name: Value set for variable os
+  ansible.builtin.debug:
+    var: common_os
+
+- name: Value set for variable machine_type
+  ansible.builtin.debug:
+    var: common_machine_type
+
+- name: Value set for variable user_home_dir
+  ansible.builtin.debug:
+    var: common_user_home_dir

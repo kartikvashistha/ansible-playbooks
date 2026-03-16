@@ -1,5 +1,5 @@
-{% if os == "fedora" -%}
-ASDF_BIN="{{ user_home_dir }}/.local/bin"
+{% if common_os == "fedora" -%}
+ASDF_BIN="{{ common_user_home_dir }}/.local/bin"
 
 if ! [[ $PATH =~ $ASDF_BIN ]]; then
   PATH="$PATH:$ASDF_BIN"

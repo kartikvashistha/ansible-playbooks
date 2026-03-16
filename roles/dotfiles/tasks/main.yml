@@ -68,7 +68,7 @@
 
 - name: Run tasks exclusive to configure a personal machine
   ansible.builtin.include_tasks: personal.yml
-  when: dotfiles_machine_type == 'personal'
+  when: common_machine_type == 'personal'
 
 - name: Create home user dirs
   ansible.builtin.file:

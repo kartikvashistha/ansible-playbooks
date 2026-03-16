@@ -7,11 +7,11 @@ fi
 
 source ~/.omzrc
 source virtualenvwrapper.sh
-{% if dotfiles_machine_type == 'personal' %}
+{% if common_machine_type == 'personal' %}
 source ~/.asdf/plugins/java/set-java-home.zsh
 {% endif -%}
 
-{% if dotfiles_os == 'macosx' %}
+{% if common_os | lower == 'macosx' %}
 export LSCOLORS='exfxcxdxbxegedabagacad'
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES # Needed for ansible when running on a macos control node
 {% endif %}
