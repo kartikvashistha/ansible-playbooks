@@ -8,12 +8,9 @@
 // from the command palette or from `Zed` application menu.
 {
   "theme": "One Dark Pro",
-  "features": {
-    "edit_prediction_provider": "none"
-  },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "diagnostics": {
     "include_warnings": true,
@@ -22,15 +19,15 @@
       "update_debounce_ms": 150,
       "padding": 4,
       "min_column": 0,
-      "max_severity": null
-    }
+      "max_severity": null,
+    },
   },
   "vim_mode": true,
   "soft_wrap": "editor_width",
   "buffer_font_family": "Iosevka Nerd Font",
   "tab_size": 2,
   "tab_bar": {
-    "show": true
+    "show": true,
   },
   "ui_font_family": ".SystemUIFont",
   "terminal": { "font_family": "Iosevka Nerd Font", "font_size": 16 },
@@ -38,13 +35,16 @@
   "buffer_font_size": 17,
   "relative_line_numbers": "enabled",
   "tabs": {
-    "file_icons": true
+    "file_icons": true,
   },
   "auto_install_extensions": {
     "ansible": true,
     "gosum": true,
     "one-dark-pro": true,
-    "ini": true
+    "ini": true,
+  },
+  "languages": {
+    "Ansible": { "semantic_tokens": "combined" },
   },
   "file_types": {
     "INI": ["*ansible.cfg"],
@@ -63,8 +63,8 @@
       "**/group_vars/**.yml",
       "**/group_vars/**.yaml",
       "**/playbooks/**.yml",
-      "**/playbooks/**.yaml"
-    ]
+      "**/playbooks/**.yaml",
+    ],
   },
   "lsp": {
     "yaml-language-server": {
@@ -78,11 +78,11 @@
               "/inventory/*.yml",
               "*/inventory/hosts.yml",
               "**/inventory/*hosts.yml",
-              "**hosts.yml"
-            ]
-          }
-        }
-      }
+              "**hosts.yml",
+            ],
+          },
+        },
+      },
     },
     "ansible-language-server": {
       "settings": {
@@ -91,20 +91,20 @@
             "enabled": "true",
             "lint": {
               "enabled": "true",
-              "path": "ansible-lint"
-            }
+              "path": "ansible-lint",
+            },
           },
           "python": {
-            "interpreterPath": "python3"
+            "interpreterPath": "python3",
           },
           "ansible": {
-            "path": "ansible"
+            "path": "ansible",
           },
           "executionEnvironment": {
-            "enabled": "false"
-          }
-        }
-      }
-    }
-  }
+            "enabled": "false",
+          },
+        },
+      },
+    },
+  },
 }
