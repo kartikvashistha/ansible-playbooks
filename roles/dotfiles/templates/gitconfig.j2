@@ -17,7 +17,7 @@
   format = ssh
 
 [gpg "ssh"]
-  program = {% if common_os == "macosx" %}/Applications/1Password.app/Contents/MacOS/op-ssh-sign {% else %}"/opt/1Password/op-ssh-sign"{% endif %}
+  program = {% if common_os | lower == "macosx" %}/Applications/1Password.app/Contents/MacOS/op-ssh-sign {% else %}"/opt/1Password/op-ssh-sign"{% endif %}
 
 
 [commit]
