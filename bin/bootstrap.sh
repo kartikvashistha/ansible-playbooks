@@ -7,9 +7,10 @@ set -e
 is_macos() {
   echo "Detected a macOS system!"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  grep -qxF 'eval "$($(which brew) shellenv)"' "$HOME/.zprofile" || echo 'eval "$($(which brew) shellenv)"' >>"$HOME/.zprofile"
+  . "$HOME/.zprofile"
   brew install ansible
   brew install --cask 1password 1password-cli
-  ansible-galaxy collection install community.general
 }
 
 is_fedora() {
