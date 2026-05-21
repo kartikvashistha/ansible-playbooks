@@ -48,17 +48,13 @@ end
 -- INFO: Enable all language servers as defined in the tools table
 vim.lsp.enable(servers_to_enable())
 
-return {
-	{
-		"neovim/nvim-lspconfig",
-		event = "BufRead",
-	},
-	{
-		"whoissethdaniel/mason-tool-installer.nvim",
-		dependencies = {
-			{ "williamboman/mason.nvim", opts = {}, event = "VeryLazy" },
-		},
-		event = { "BufRead" },
-		opts = { ensure_installed = mason_packages_to_install },
-	},
-}
+vim.pack.add({
+	{ src = "https://github.com/neovim/nvim-lspconfig" },
+	{ src = "https://github.com/williamboman/mason.nvim" },
+	{ src = "https://github.com/whoissethdaniel/mason-tool-installer.nvim" },
+})
+
+require("mason").setup()
+require("mason-tool-installer").setup({
+	ensure_installed = mason_packages_to_install,
+})
