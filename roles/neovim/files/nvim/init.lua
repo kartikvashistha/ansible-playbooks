@@ -9,31 +9,10 @@ vim.o.clipboard = "unnamedplus"
 vim.o.timeoutlen = 300
 vim.o.hlsearch = true
 vim.o.winborder = "rounded"
+
 -- Configure how new splits should be opened
 vim.o.splitright = true
 vim.o.splitbelow = true
-
--- bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
-end
-vim.opt.rtp:prepend(lazypath)
-
--- bootstrap additional configs
-require("configs.lazy")
-require("keymaps")
-require("configs.ansible")
-
--- Set colourscheme
-vim.cmd([[colorscheme tokyonight-night]])
 
 -- Execute the following vim script commands
 vim.cmd("set expandtab")
@@ -57,3 +36,33 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.hl.on_yank()
 	end,
 })
+
+-- Load all files under the lua/plugins dir automatically
+local function require_plugins(dir, prefix)
+	local handle = vim.loop.fs_scandir(dir)
+	if not handle then
+		return
+	end
+
+	while true do
+		local name, type = vim.loop.fs_scandir_next(handle)
+		if not name then
+			break
+		end
+
+		local path = dir .. "/" .. name
+
+		if type == "directory" then
+			require_plugins(path, prefix .. "." .. name)
+		elseif type == "file" and name:match("%.lua$") then
+			local module = prefix .. "." .. name:gsub("%.lua$", "")
+			require(module)
+		end
+	end
+end
+
+local config = vim.fn.stdpath("config")
+require_plugins(config .. "/lua/plugins", "plugins")
+
+require("keymaps")
+require("configs.ansible")

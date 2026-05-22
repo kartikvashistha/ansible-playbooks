@@ -1,47 +1,28 @@
-return {
-	{
-		"mfussenegger/nvim-lint",
-		-- event = "BufRead",
-		event = "VeryLazy",
-	},
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		event = "VeryLazy",
-		main = "ibl",
-		opts = {},
-	},
-	{
-		"numToStr/Comment.nvim",
-		lazy = false,
-		event = "VeryLazy",
-		opts = {},
-	},
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-		config = true,
-	},
+vim.pack.add({
+	"https://github.com/mfussenegger/nvim-lint",
+	"https://github.com/lukas-reineke/indent-blankline.nvim",
+	"https://github.com/numToStr/Comment.nvim",
+	"https://github.com/windwp/nvim-autopairs",
+	"https://github.com/folke/todo-comments.nvim", -- Highlight todo, notes, etc in comments
+	"https://github.com/nvim-lua/plenary.nvim",
+	"https://github.com/stevearc/conform.nvim",
+})
 
-	-- Highlight todo, notes, etc in comments
-	{
-		"folke/todo-comments.nvim",
-		event = "VeryLazy",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = {
-			signs = false,
-		},
-	},
+require("ibl").setup()
 
-	{
-		"stevearc/conform.nvim",
-		event = "VeryLazy",
-		opts = {
-			formatters_by_ft = {
-				lua = { "stylua" },
-				terraform = { "terraform_fmt" },
-				python = { "black" },
-			},
-			format_on_save = { timeout_ms = 500, lsp_fallback = true },
-		},
+require("Comment").setup()
+
+require("nvim-autopairs").setup()
+
+require("todo-comments").setup({
+	signs = false,
+})
+
+require("conform").setup({
+	formatters_by_ft = {
+		lua = { "stylua" },
+		terraform = { "terraform_fmt" },
+		python = { "black" },
 	},
-}
+	format_on_save = { timeout_ms = 500, lsp_fallback = true },
+})

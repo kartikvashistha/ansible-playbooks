@@ -1,15 +1,16 @@
-return {
-	{
-		"folke/tokyonight.nvim",
-		lazy = true,
-		priority = 1000,
-	},
+vim.pack.add({
+	"https://github.com/folke/tokyonight.nvim",
+	"https://github.com/sainnhe/sonokai",
+	"https://github.com/ellisonleao/gruvbox.nvim",
+})
 
-	{
-		"sainnhe/sonokai",
-		lazy = true,
-		init = function() -- init function runs before the plugin is loaded
-			vim.g.sonokai_style = "maia"
-		end,
-	},
-}
+local theme = "sonokai" -- set the desired theme value here
+local colourscheme = function()
+	if theme == "sonokai" then
+		vim.g.sonokai_style = "maia"
+	end
+
+	return theme
+end
+
+vim.cmd.colorscheme(colourscheme())
