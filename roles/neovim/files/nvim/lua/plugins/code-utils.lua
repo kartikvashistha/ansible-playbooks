@@ -10,7 +10,7 @@ vim.pack.add({
 
 require("ibl").setup()
 
-require("comment").setup()
+require("Comment").setup()
 
 require("nvim-autopairs").setup()
 

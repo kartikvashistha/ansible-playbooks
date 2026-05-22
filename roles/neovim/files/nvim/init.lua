@@ -37,8 +37,32 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-require("lsp")
-require("code-utils")
-require("editor")
+-- Load all files under the lua/plugins dir automatically
+local function require_plugins(dir, prefix)
+	local handle = vim.loop.fs_scandir(dir)
+	if not handle then
+		return
+	end
+
+	while true do
+		local name, type = vim.loop.fs_scandir_next(handle)
+		if not name then
+			break
+		end
+
+		local path = dir .. "/" .. name
+
+		if type == "directory" then
+			require_plugins(path, prefix .. "." .. name)
+		elseif type == "file" and name:match("%.lua$") then
+			local module = prefix .. "." .. name:gsub("%.lua$", "")
+			require(module)
+		end
+	end
+end
+
+local config = vim.fn.stdpath("config")
+require_plugins(config .. "/lua/plugins", "plugins")
+
 require("keymaps")
 require("configs.ansible")
