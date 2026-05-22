@@ -4,13 +4,11 @@ vim.pack.add({
 	"https://github.com/ellisonleao/gruvbox.nvim",
 })
 
-local theme = "sonokai" -- set desired theme value here
+local theme = "sonokai" -- set the desired theme value here
 local colourscheme = function()
 	if theme == "sonokai" then
 		vim.g.sonokai_style = "maia"
 	end
-
-	-- if theme ==
 
 	return theme
 end
