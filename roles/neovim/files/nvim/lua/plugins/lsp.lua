@@ -25,7 +25,7 @@ local mason = {
 		return servers
 	end,
 	linters = { "yamllint" },
-	formatters = { "stylua", "gofumpt", "ruff" },
+	formatters = { "stylua", "gofumpt", "ruff", "prettier" },
 }
 
 local mason_packages_to_install =
