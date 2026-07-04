@@ -7,6 +7,8 @@
     - role: dotfiles
     - role: neovim
     - role: kubernetes
+  tags:
+    - node_setup
 
 - name: Specific tasks for kubernetes master nodes
   hosts: kubernetes_master_nodes
@@ -15,14 +17,14 @@
       ansible.builtin.file:
         state: directory
         path: "{{ ansible_facts['env']['HOME'] }}/.kube"
-        mode: '0755'
+        mode: "0755"
 
     - name: Copy kube config file to home dir
       ansible.builtin.copy:
         remote_src: true
         src: /etc/kubernetes/admin.conf
         dest: "{{ ansible_facts['env']['HOME'] }}/.kube/config"
-        mode: '0644'
+        mode: "0644"
       become: true
 
     - name: Taint master nodes to prevent application pods from running on it
@@ -39,7 +41,7 @@
         name: cilium
         release_namespace: kube-system
         chart_ref: "oci://quay.io/cilium/charts/cilium"
-        chart_version: 1.19.1
+        chart_version: 1.19.5
         wait: true
         force: false
         values:
@@ -48,3 +50,12 @@
               clusterPoolIPv4PodCIDRList: ["10.0.0.0/8"]
           cni:
             exclusive: false
+      notify:
+        - Restart crio
+  handlers:
+    - name: Restart crio
+      ansible.builtin.service:
+        name: crio
+        state: restarted
+        enabled: true
+      become: true
