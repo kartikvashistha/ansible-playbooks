@@ -58,7 +58,6 @@ macos_brew_pkgs:
   - minikube
   - molecule
   - ncurses
-  - neofetch
   - neovim
   - node
   - openldap
@@ -104,7 +103,6 @@ macos_brew_casks:
   - jellyfin
   - jellyfin-media-player
   - jetbrains-toolbox
-  - kitty
   - kitty
   - plex
   - qbittorrent
